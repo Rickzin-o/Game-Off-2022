@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
+[ext_resource path="res://Data/Code/button.gd" type="Script" id=2]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.54902, 0.741176, 0.713726, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.390625
+anchor_top = 0.443333
+anchor_right = 0.609375
+anchor_bottom = 0.556667
+theme = ExtResource( 1 )
+custom_constants/separation = 24
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 252.0
+margin_bottom = 22.0
+size_flags_vertical = 0
+text = "Play"
+script = ExtResource( 2 )
+nextScene = "Game/doorsroom"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 252.0
+margin_bottom = 68.0
+size_flags_vertical = 2
+text = "Credits"
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_Button_pressed"]
