@@ -10,10 +10,45 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 16.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -200.0
 margin_top = 16.0
-margin_right = 200.0
+margin_right = -16.0
 margin_bottom = 40.0
 text = "Dreams: 0/1"
 align = 1
 valign = 1
+
+[node name="Lifebar" type="VBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Lifebar"]
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Lifebar/ColorRect"]
+margin_right = 160.0
+margin_bottom = 24.0
+color = Color( 0.901961, 0.0784314, 0.0784314, 1 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Lifebar/ColorRect"]
+margin_right = 160.0
+margin_bottom = 24.0
+size_flags_vertical = 3
+border_color = Color( 0, 0, 0, 1 )
+border_width = 2.0
+editor_only = false
+
+[node name="Label" type="Label" parent="Lifebar/ColorRect/ReferenceRect"]
+margin_right = 160.0
+margin_bottom = 24.0
+text = "100/100"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="Lifebar"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Data/Others/transitions.gdshader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/transition_type = 0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/diamond_size = 0.51
+shader_param/blur_intensity = 4.0
+shader_param/min_pixel = 1.0
+shader_param/max_pixel = 128.0
+shader_param/process_value = 0.0
+
+[node name="Transition" type="ColorRect"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+material = SubResource( 1 )
+margin_right = 1152.0
+margin_bottom = 640.0
+rect_pivot_offset = Vector2( 56, 40 )

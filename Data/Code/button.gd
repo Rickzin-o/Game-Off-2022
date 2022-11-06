@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 export(String) var nextScene = 'menuprincipal'
 

@@ -264,6 +264,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-action/ease_func.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Data/Code/player.gd"
+}, {
 "base": "Node",
 "class": "ScreenLoader",
 "language": "GDScript",
@@ -326,6 +331,7 @@ _global_script_class_icons={
 "GDActionVisibility": "",
 "GDActionWait": "",
 "GDEaseFunc": "",
+"Player": "",
 "ScreenLoader": "",
 "SplashContainer": "res://addons/awesome_splash/assets/icon/splash_container_icon.png"
 }
@@ -423,6 +429,7 @@ interact={
 2d_physics/layer_1="player"
 2d_physics/layer_2="map"
 2d_physics/layer_3="objects"
+2d_physics/layer_4="enemies"
 
 [physics]
 
