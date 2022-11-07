@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 28.0
+
+[node name="NPC" type="Node2D"]
+
+[node name="Sprite" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( -16, 0, -8, -8, 8, -8, 16, 0, 16, -40, -16, -40 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -24 )
+shape = SubResource( 1 )
