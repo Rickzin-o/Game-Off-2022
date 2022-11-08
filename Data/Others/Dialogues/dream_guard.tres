@@ -1,0 +1,128 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 7
+syntax_version = 2
+raw_text = "~ presentation
+
+Guard: Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]
+Guard: Here are some [i]choices[/i].
+- Say \"Hi\"
+	Guard: Hello!
+- Say \"Goodbye\"
+	Guard: Bye bye.
+- What? => explain
+- End the conversation => END
+
+~ explain
+Guard: You're the Dreamer, i'm the Guard.
+Guard: That's how things work."
+errors = [  ]
+titles = {
+"explain": "12",
+"presentation": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "presentation",
+"type": "title"
+},
+"11": {
+"next_id": "12",
+"text": "explain",
+"type": "title"
+},
+"12": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "13",
+"replacements": [  ],
+"text": "You're the Dreamer, i'm the Guard.",
+"translation_key": "You're the Dreamer, i'm the Guard.",
+"type": "dialogue"
+},
+"13": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "That's how things work.",
+"translation_key": "That's how things work.",
+"type": "dialogue"
+},
+"2": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]",
+"translation_key": "Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]",
+"type": "dialogue"
+},
+"3": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "4",
+"replacements": [  ],
+"text": "Here are some [i]choices[/i].",
+"translation_key": "Here are some [i]choices[/i].",
+"type": "dialogue"
+},
+"4": {
+"next_id": "5",
+"next_id_after": "end!",
+"replacements": [  ],
+"responses": PoolStringArray( "4", "6", "8", "9" ),
+"text": "Say \"Hi\"",
+"translation_key": "Say \"Hi\"",
+"type": "response"
+},
+"5": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "4",
+"replacements": [  ],
+"text": "Hello!",
+"translation_key": "Hello!",
+"type": "dialogue"
+},
+"6": {
+"next_id": "7",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "Say \"Goodbye\"",
+"translation_key": "Say \"Goodbye\"",
+"type": "response"
+},
+"7": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "6",
+"replacements": [  ],
+"text": "Bye bye.",
+"translation_key": "Bye bye.",
+"type": "dialogue"
+},
+"8": {
+"next_id": "12",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "What?",
+"translation_key": "What?",
+"type": "response"
+},
+"9": {
+"next_id": "end",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "End the conversation",
+"translation_key": "End the conversation",
+"type": "response"
+}
+}

@@ -1,0 +1,41 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 3
+syntax_version = 2
+raw_text = "~ not_enough_dreams
+
+ : You don't have enough dreams to open the door.
+ : Come back when you collect all of them."
+errors = [  ]
+titles = {
+"not_enough_dreams": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "not_enough_dreams",
+"type": "title"
+},
+"2": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "You don't have enough dreams to open the door.",
+"translation_key": "You don't have enough dreams to open the door.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Come back when you collect all of them.",
+"translation_key": "Come back when you collect all of them.",
+"type": "dialogue"
+}
+}

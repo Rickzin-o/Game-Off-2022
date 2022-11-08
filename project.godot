@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/awesome_splash/core/AweTimer.gd"
 }, {
+"base": "Resource",
+"class": "DialogueResource",
+"language": "GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
 "base": "Reference",
 "class": "GDAction",
 "language": "GDScript",
@@ -286,6 +291,7 @@ _global_script_class_icons={
 "AweSplashScreenViewport": "",
 "AweTextNode": "res://addons/awesome_splash/assets/icon/text_node_icon.png",
 "AweTimer": "",
+"DialogueResource": "",
 "GDAction": "",
 "GDActionColorize": "",
 "GDActionCustomAction": "",
@@ -348,6 +354,7 @@ config/icon="res://icon.png"
 sp="*res://addons/awesome_splash/utils_splash.gd"
 gd="*res://addons/godot-action/utils_gd_action.tscn"
 glob="*res://Data/Code/global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -356,7 +363,7 @@ window/size/height=640
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/awesome_splash/plugin.cfg", "res://addons/godot-action/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/awesome_splash/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/godot-action/plugin.cfg" )
 
 [importer_defaults]
 

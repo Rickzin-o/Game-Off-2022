@@ -10,6 +10,7 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
+room = "testroom"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 456, 216 )

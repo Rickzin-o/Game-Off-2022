@@ -9,6 +9,8 @@ func _ready():
 	glob.connect("hurted", self, "update_lifebar")
 
 func _process(delta):
+	if glob.totalDreams <= 0:
+		dreamCount.visible = false
 	dreamCount.text = 'Dreams: ' + str(glob.dreams) + '/' + str(glob.totalDreams)
 	lifebar.get_node("ColorRect/ReferenceRect/Label").text = str(glob.health) + '/' + str(glob.maxHealth)
 
