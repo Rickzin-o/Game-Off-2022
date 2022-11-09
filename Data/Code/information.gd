@@ -1,18 +1,21 @@
 extends Control
 
-onready var dreamCount = $Label
+onready var dream_count = $Dreams
+onready var money_count = $Money
 onready var lifebar = $Lifebar
 onready var tween = $Lifebar/Tween
 
 func _ready():
-	dreamCount.text = 'Dreams: 0/' + str(glob.totalDreams)
+	dream_count.text = 'Dreams: 0/' + str(glob.totalDreams)
 	glob.connect("hurted", self, "update_lifebar")
 
 func _process(delta):
 	if glob.totalDreams <= 0:
-		dreamCount.visible = false
-	dreamCount.text = 'Dreams: ' + str(glob.dreams) + '/' + str(glob.totalDreams)
+		dream_count.visible = false
+	else:
+		dream_count.text = 'Dreams: ' + str(glob.dreams) + '/' + str(glob.totalDreams)
 	lifebar.get_node("ColorRect/ReferenceRect/Label").text = str(glob.health) + '/' + str(glob.maxHealth)
+	money_count.text = '$%d' % [glob.storage['money']]
 
 func update_lifebar():
 	var rect1 = lifebar.get_node("ColorRect")

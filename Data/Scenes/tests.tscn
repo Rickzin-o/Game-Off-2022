@@ -12,6 +12,9 @@
 script = ExtResource( 4 )
 room = "testroom"
 
+[node name="End" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1476, 256 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 456, 216 )
 
@@ -32,9 +35,6 @@ position = Vector2( 752, 160 )
 
 [node name="Dream3" parent="Dreams" instance=ExtResource( 3 )]
 position = Vector2( 1168, 128 )
-
-[node name="End" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1476, 256 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
 
