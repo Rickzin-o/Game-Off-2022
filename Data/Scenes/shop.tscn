@@ -50,6 +50,12 @@ margin_top = 160.0
 margin_right = 288.0
 margin_bottom = 224.0
 
+[node name="ColorRect7" type="ColorRect" parent="ColorRect"]
+margin_left = 32.0
+margin_top = 288.0
+margin_right = 96.0
+margin_bottom = 352.0
+
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 margin_left = 96.0
 margin_top = 96.0
