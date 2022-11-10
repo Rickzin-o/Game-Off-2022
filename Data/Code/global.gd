@@ -5,7 +5,7 @@ signal transition
 signal end_level
 signal interaction
 
-var storage = {'dreams': 0, 'money': 0, 'levels': []}
+var storage = {'dreams': 0, 'money': 1000, 'levels': []}
 var talking := false
 
 var dreams := 0

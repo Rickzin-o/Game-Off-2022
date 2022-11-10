@@ -4,11 +4,14 @@ var index: Vector2 = Vector2()
 
 onready var rect := $ColorRect
 onready var reference := $ReferenceRect
+onready var info_rect := $InfoRect
 onready var num_items = rect.get_child_count()
 onready var lines = ceil(float(num_items)/3)
 
+func _ready():
+	rect.get_node("Label").text = "Money: $%d" % [glob.storage['money']]
 
-func _unhandled_input(event):
+func _input(event):
 	if Input.is_action_just_pressed("ui_right"):
 		index.x = int(index.x+1) % 3
 		if not index_exist(index):
@@ -31,6 +34,17 @@ func _unhandled_input(event):
 			index.y -= 1
 	reference_positionx((index.x+1) * 96)
 	reference_positiony(index.y * 128 + 96)
+	
+	var item = rect.get_child(index.x + index.y*3)
+	print(index.x + index.y*3)
+	var item_info = get_item_info(item)
+	info_rect.get_node("Label").text = "%s - %d$" % [item_info['name'], item_info['price']]
+	info_rect.get_node("Description").text = item_info['description']
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		if glob.storage['money'] >= item_info['price']:
+			glob.storage['money'] -= item_info['price']
+			rect.get_node("Label").text = "Money: $%d" % [glob.storage['money']]
 
 func reference_positionx(positionx):
 	reference.rect_position.x = positionx
@@ -44,3 +58,6 @@ func index_exist(index: Vector2):
 		return false
 	else:
 		return true
+
+func get_item_info(item: ShopItem):
+	return {"name": item.item_name, "price": item.price, "description": item.description}

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Data/Code/shop.gd" type="Script" id=1]
+[ext_resource path="res://Data/Code/shopitem.gd" type="Script" id=2]
+[ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=3]
+[ext_resource path="res://Data/Others/kpixel.tres" type="Theme" id=4]
 
 [node name="Shop" type="Control"]
 anchor_right = 1.0
@@ -19,42 +22,77 @@ margin_left = 32.0
 margin_top = 32.0
 margin_right = 96.0
 margin_bottom = 96.0
+script = ExtResource( 2 )
+item_name = "+ Max Health"
+description = "Add 20 Max HP"
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 margin_left = 128.0
 margin_top = 32.0
 margin_right = 192.0
 margin_bottom = 96.0
+script = ExtResource( 2 )
+price = 200
+item_name = "+ Max Health"
+description = "Add 40 Max HP"
 
 [node name="ColorRect3" type="ColorRect" parent="ColorRect"]
 margin_left = 224.0
 margin_top = 32.0
 margin_right = 288.0
 margin_bottom = 96.0
+script = ExtResource( 2 )
+item_name = "+ Damage"
+description = "Deal more damage in enemies"
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect"]
 margin_left = 32.0
 margin_top = 160.0
 margin_right = 96.0
 margin_bottom = 224.0
+script = ExtResource( 2 )
+item_name = "Perk 1"
+description = "It's perk 1"
 
 [node name="ColorRect5" type="ColorRect" parent="ColorRect"]
 margin_left = 128.0
 margin_top = 160.0
 margin_right = 192.0
 margin_bottom = 224.0
+script = ExtResource( 2 )
+price = 150
+item_name = "Perk 2"
+description = "It's perk 2"
 
 [node name="ColorRect6" type="ColorRect" parent="ColorRect"]
 margin_left = 224.0
 margin_top = 160.0
 margin_right = 288.0
 margin_bottom = 224.0
+script = ExtResource( 2 )
+price = 200
+item_name = "Perk 3"
+description = "It's peter perk 3"
 
 [node name="ColorRect7" type="ColorRect" parent="ColorRect"]
 margin_left = 32.0
 margin_top = 288.0
 margin_right = 96.0
 margin_bottom = 352.0
+script = ExtResource( 2 )
+price = 250
+item_name = "Perk 4"
+description = "It's perk 4"
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 8.0
+margin_top = 488.0
+margin_right = 96.0
+margin_bottom = 504.0
+theme = ExtResource( 4 )
+text = "Money: $000"
+align = 1
+valign = 1
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 margin_left = 96.0
@@ -64,3 +102,28 @@ margin_bottom = 160.0
 border_color = Color( 0, 0, 0, 1 )
 border_width = 3.0
 editor_only = false
+
+[node name="InfoRect" type="ColorRect" parent="."]
+margin_left = 480.0
+margin_top = 448.0
+margin_right = 960.0
+margin_bottom = 576.0
+theme = ExtResource( 3 )
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
+
+[node name="Label" type="Label" parent="InfoRect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+text = "Name - 000$"
+align = 1
+valign = 1
+
+[node name="Description" type="RichTextLabel" parent="InfoRect"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 448.0
+margin_bottom = 128.0
+theme = ExtResource( 4 )
+text = "something something"
