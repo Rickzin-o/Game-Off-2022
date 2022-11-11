@@ -11,6 +11,7 @@ onready var camAnim = $Camera2D/Tween
 onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
 
 var air_timer = 0
+var double_jump = false
 var friction = false
 var intangible = false
 var dead = false
@@ -28,13 +29,17 @@ func _physics_process(delta):
 	else:
 		friction = true
 	
-	if Input.is_action_just_pressed("jump") and air_timer < 7:
+	if Input.is_action_just_pressed("jump") and air_timer < 6:
 		movement.y = -JUMP_FORCE
+	if Input.is_action_just_pressed("jump") and air_timer >= 6 and not double_jump:
+		movement.y = -JUMP_FORCE * 0.9
+		double_jump = true
 	if Input.is_action_just_released("jump"):
 		movement.y = max(movement.y * 0.7, movement.y)
 	
 	if is_on_floor():
 		air_timer = 0
+		double_jump = false
 		if friction:
 			movement.x = lerp(movement.x, 0, 0.06)
 	else:
