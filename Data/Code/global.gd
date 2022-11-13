@@ -6,6 +6,7 @@ signal end_level
 signal dialogue_end
 
 var storage = {'dreams': 0, 'levels': []}
+var playersave = {'save_pos': false, 'position': Vector2()}
 
 var dreams = 0
 var totalDreams = 0

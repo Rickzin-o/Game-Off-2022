@@ -7,15 +7,20 @@ const GRAVITY = 20
 const MAX_GRAVITY = 500
 const JUMP_FORCE = 600
 
-onready var camAnim = $Camera2D/Tween
-onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
-
 var air_timer = 0
 var double_jump = false
 var friction = false
 var intangible = false
 var dead = false
 var movement = Vector2()
+
+onready var camAnim = $Camera2D/Tween
+onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
+
+func _ready():
+	if glob.playersave['save_pos']:
+		global_position = glob.playersave['position']
+		glob.playersave['save_pos'] = false
 
 func _physics_process(delta):
 	movement.y = min(movement.y + GRAVITY * (delta*60), MAX_GRAVITY)
