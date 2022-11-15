@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 8
+resource_version = 15
 syntax_version = 2
 raw_text = "~ presentation
 
@@ -15,7 +15,7 @@ Guard: Here are some [i]choices[/i].
 - Say \"Goodbye\"
 	Guard: Bye bye.
 - What? => explain
-- End the conversation => END
+- End the conversation. => END
 
 ~ explain
 Guard: You're the Dreamer, i'm the Guard.
@@ -121,8 +121,8 @@ lines = {
 "next_id": "end",
 "next_id_after": "end!",
 "replacements": [  ],
-"text": "End the conversation",
-"translation_key": "End the conversation",
+"text": "End the conversation.",
+"translation_key": "End the conversation.",
 "type": "response"
 }
 }

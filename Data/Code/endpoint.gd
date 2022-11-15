@@ -8,12 +8,16 @@ onready var twn = $Tween
 onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
 onready var dialogue = load("res://Data/Others/Dialogues/door.tres")
 
-func _input(event):
-	if playerinside and Input.is_action_just_pressed("interact"):
-		if glob.dreams >= glob.totalDreams:
-			end_level()
-		else:
-			DialogueManager.show_example_dialogue_balloon("not_enough_dreams", dialogue)
+func _ready():
+	glob.connect("interaction", self, "interact")
+
+func interact():
+	if not playerinside: return
+	
+	if glob.dreams >= glob.totalDreams:
+		end_level()
+	else:
+		DialogueManager.show_example_dialogue_balloon("not_enough_dreams", dialogue)
 
 func end_level():
 	glob.emit_signal("transition")

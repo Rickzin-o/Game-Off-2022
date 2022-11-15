@@ -64,6 +64,11 @@ func _physics_process(delta):
 	
 	movement = move_and_slide(movement, Vector2.UP)
 
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("interact"):
+		print('emitido')
+		get_viewport().set_input_as_handled()
+		glob.emit_signal("interaction")
 
 func cam_zoomin():
 	camAnim.interpolate_property($Camera2D, "zoom", Vector2(1, 1), Vector2(0.25, 0.25), 0.75, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
