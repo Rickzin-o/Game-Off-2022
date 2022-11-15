@@ -10,6 +10,7 @@ var player = null
 func _input(event):
 	if Input.is_action_just_pressed("interact") and playerinside:
 		emit_signal("entered")
+		glob.playersave['position'] = global_position + Vector2(-16, -32)
 		$Timer.start()
 
 

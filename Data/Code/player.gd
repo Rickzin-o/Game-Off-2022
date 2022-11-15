@@ -3,18 +3,24 @@ class_name Player
 
 const MAX_SPEED = 250
 const ACCELERATION = 25
-const GRAVITY = 20
+const GRAVITY = 22
 const MAX_GRAVITY = 500
 const JUMP_FORCE = 600
 
-onready var camAnim = $Camera2D/Tween
-onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
-
 var air_timer = 0
+var jump_remember = 0
 var friction = false
 var intangible = false
 var dead = false
 var movement = Vector2()
+
+onready var camAnim = $Camera2D/Tween
+onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
+
+func _ready():
+	if glob.playersave['save_pos']:
+		global_position = glob.playersave['position']
+		glob.playersave['save_pos'] = false
 
 func _physics_process(delta):
 	movement.y = min(movement.y + GRAVITY * (delta*60), MAX_GRAVITY)
@@ -28,17 +34,23 @@ func _physics_process(delta):
 	else:
 		friction = true
 	
-	if Input.is_action_just_pressed("jump") and air_timer < 7:
-		movement.y = -JUMP_FORCE
+	if Input.is_action_just_pressed("jump"):
+		jump_remember = 2
 	if Input.is_action_just_released("jump"):
 		movement.y = max(movement.y * 0.7, movement.y)
 	
-	if is_on_floor():
+	if air_timer > 0 and jump_remember > 0:
 		air_timer = 0
+		jump_remember = 0
+		movement.y = -JUMP_FORCE
+	
+	if is_on_floor():
+		air_timer = 6
 		if friction:
 			movement.x = lerp(movement.x, 0, 0.06)
 	else:
-		air_timer += 1
+		air_timer -= 1
+		jump_remember -= 1
 		if friction:
 			movement.x = lerp(movement.x, 0, 0.07)
 	
