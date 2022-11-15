@@ -3,12 +3,12 @@ class_name Player
 
 const MAX_SPEED = 250
 const ACCELERATION = 25
-const GRAVITY = 20
+const GRAVITY = 22
 const MAX_GRAVITY = 500
 const JUMP_FORCE = 600
 
 var air_timer = 0
-var double_jump = false
+var jump_remember = 0
 var friction = false
 var intangible = false
 var dead = false
@@ -34,21 +34,23 @@ func _physics_process(delta):
 	else:
 		friction = true
 	
-	if Input.is_action_just_pressed("jump") and air_timer < 6:
-		movement.y = -JUMP_FORCE
-	if Input.is_action_just_pressed("jump") and air_timer >= 6 and not double_jump:
-		movement.y = -JUMP_FORCE * 0.9
-		double_jump = true
+	if Input.is_action_just_pressed("jump"):
+		jump_remember = 2
 	if Input.is_action_just_released("jump"):
 		movement.y = max(movement.y * 0.7, movement.y)
 	
-	if is_on_floor():
+	if air_timer > 0 and jump_remember > 0:
 		air_timer = 0
-		double_jump = false
+		jump_remember = 0
+		movement.y = -JUMP_FORCE
+	
+	if is_on_floor():
+		air_timer = 6
 		if friction:
 			movement.x = lerp(movement.x, 0, 0.06)
 	else:
-		air_timer += 1
+		air_timer -= 1
+		jump_remember -= 1
 		if friction:
 			movement.x = lerp(movement.x, 0, 0.07)
 	
