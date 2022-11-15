@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Data/Scenes/canvas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Data/Others/tiles.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Data/Scenes/lever.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Data/Scenes/gate.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Data/Scenes/movingplatform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Data/Scenes/trash.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -114,6 +115,9 @@ position = Vector2( 624, -304 )
 [node name="Gate" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 848, -400 )
 go_to = Vector2( 0, -88 )
+
+[node name="Trash" parent="Objects" instance=ExtResource( 12 )]
+position = Vector2( 96, -352 )
 
 [node name="Moving Platform" parent="." instance=ExtResource( 11 )]
 position = Vector2( 256, 0 )
