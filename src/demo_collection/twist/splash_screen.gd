@@ -30,7 +30,7 @@ const FADE_IN_LOGO_TIME = 0.3
 const DROP_DOWN_LOGO_TIME = 0.3
 const PREPARE_MOVE_OTHER_SCREEN = 0.75
 
-const USE_SPINNY_CIRCE = falsew
+const USE_SPINNY_CIRCE = false
 const USE_TRAIL_EFFTECT = true
 
 
