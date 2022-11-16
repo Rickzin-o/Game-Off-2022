@@ -23,26 +23,31 @@ func _ready():
 		glob.playersave['save_pos'] = false
 
 func _physics_process(delta):
+	
 	movement.y = min(movement.y + GRAVITY * (delta*60), MAX_GRAVITY)
 	
-	if Input.is_action_pressed("ui_right"):
-		friction = false
-		movement.x = min(movement.x + ACCELERATION, MAX_SPEED)
-	elif Input.is_action_pressed("ui_left"):
-		friction = false
-		movement.x = max(movement.x - ACCELERATION, -MAX_SPEED)
+	if not glob.talking:
+		if Input.is_action_pressed("ui_right"):
+			friction = false
+			movement.x = min(movement.x + ACCELERATION, MAX_SPEED)
+		elif Input.is_action_pressed("ui_left"):
+			friction = false
+			movement.x = max(movement.x - ACCELERATION, -MAX_SPEED)
+		else:
+			friction = true
+		
+		if Input.is_action_just_pressed("jump"):
+			jump_remember = 2
+		if Input.is_action_just_released("jump"):
+			movement.y = max(movement.y * 0.7, movement.y)
+		
+		if air_timer > 0 and jump_remember > 0:
+			air_timer = 0
+			jump_remember = 0
+			movement.y = -JUMP_FORCE
+			
 	else:
-		friction = true
-	
-	if Input.is_action_just_pressed("jump"):
-		jump_remember = 2
-	if Input.is_action_just_released("jump"):
-		movement.y = max(movement.y * 0.7, movement.y)
-	
-	if air_timer > 0 and jump_remember > 0:
-		air_timer = 0
-		jump_remember = 0
-		movement.y = -JUMP_FORCE
+		movement.x = lerp(movement.x, 0, 0.1)
 	
 	if is_on_floor():
 		air_timer = 6
@@ -62,6 +67,7 @@ func _physics_process(delta):
 		glob.health = glob.maxHealth
 		get_tree().change_scene_to(doorsroom)
 	
+	
 	movement = move_and_slide(movement, Vector2.UP)
 
 func _unhandled_input(event):
@@ -80,3 +86,11 @@ func intangibility():
 	intangible = false
 	$Effects.stop()
 	self.modulate = Color8(255, 255, 255)
+
+func take_damage(screenshake: int, damage: int):
+	intangibility()
+	get_node("Camera2D").screenshake(screenshake)
+	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXDamage.wav"))
+	
+	glob.health -= damage
+	glob.emit_signal("hurted")

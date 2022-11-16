@@ -10,6 +10,7 @@ onready var dialogue = load("res://Data/Others/Dialogues/door.tres")
 
 func _ready():
 	glob.connect("interaction", self, "interact")
+	DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 
 func interact():
 	if not playerinside: return
@@ -18,7 +19,6 @@ func interact():
 		end_level()
 	else:
 		glob.talking = true
-		DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 		DialogueManager.show_example_dialogue_balloon("not_enough_dreams", dialogue)
 
 func end_level():

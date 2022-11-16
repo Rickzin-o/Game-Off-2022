@@ -2,7 +2,7 @@ extends Control
 
 #The game pause when ESC is pressed
 func _input(event):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and not glob.talking:
 		var pausestate = not get_tree().is_paused()
 		visible = pausestate
 		get_tree().set_pause(pausestate)

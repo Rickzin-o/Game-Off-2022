@@ -8,12 +8,12 @@ var talking = false
 
 func _ready():
 	glob.connect("interaction", self, "interact")
+	DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 
 func interact():
 	if not playerinside: return
 	
 	glob.talking = true
-	DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 	DialogueManager.show_example_dialogue_balloon(dialogue, resource)
 
 

@@ -42,7 +42,4 @@ func die():
 func _on_Hitbox_body_entered(body):
 	if body is Player:
 		if not body.intangible:
-			body.get_node("Camera2D").screenshake(4)
-			body.intangibility()
-			glob.health -= DAMAGE
-			glob.emit_signal("hurted")
+			body.take_damage(4, DAMAGE)
