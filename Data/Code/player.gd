@@ -65,8 +65,7 @@ func _physics_process(delta):
 	movement = move_and_slide(movement, Vector2.UP)
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("interact"):
-		print('emitido')
+	if Input.is_action_just_pressed("interact") and not glob.talking:
 		get_viewport().set_input_as_handled()
 		glob.emit_signal("interaction")
 

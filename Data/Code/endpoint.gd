@@ -17,6 +17,8 @@ func interact():
 	if glob.dreams >= glob.totalDreams:
 		end_level()
 	else:
+		glob.talking = true
+		DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 		DialogueManager.show_example_dialogue_balloon("not_enough_dreams", dialogue)
 
 func end_level():

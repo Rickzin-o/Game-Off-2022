@@ -7,17 +7,15 @@ var playerinside = false
 var talking = false
 
 func _ready():
-	pass
-#	glob.connect("dialogue_end", self, "set_not_talking")
+	glob.connect("interaction", self, "interact")
 
-func _input(event):
-	if playerinside and Input.is_action_just_pressed("interact"):
-		glob.talking = true
-		DialogueManager.show_example_dialogue_balloon(dialogue, resource)
+func interact():
+	if not playerinside: return
+	
+	glob.talking = true
+	DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
+	DialogueManager.show_example_dialogue_balloon(dialogue, resource)
 
-func set_not_talking():
-	print('oxi')
-	glob.talking = false
 
 func _on_Area2D_body_entered(body):
 	playerinside = true
