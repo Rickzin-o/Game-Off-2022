@@ -7,7 +7,8 @@ var playerinside = false
 var talking = false
 
 func _ready():
-	glob.connect("dialogue_end", self, "set_not_talking")
+	pass
+#	glob.connect("dialogue_end", self, "set_not_talking")
 
 func _input(event):
 	if playerinside and Input.is_action_just_pressed("interact"):

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Data/Code/coin.gd" type="Script" id=1]
+[ext_resource path="res://Data/Images/Jewels.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -17,8 +18,13 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color( 0.870588, 0.780392, 0.156863, 1 )
+visible = false
+color = Color( 0.980392, 0.980392, 0.392157, 1 )
 polygon = PoolVector2Array( 0, -8, 8, 0, 0, 8, -8, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

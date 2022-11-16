@@ -9,6 +9,7 @@ func _input(event):
 	if playerinside and Input.is_action_just_pressed("interact"):
 		active = not active
 		$Polygon2D.scale.x *= -1
+		$Sprite.flip_h = active
 		emit_signal("pressed", active)
 
 

@@ -17,7 +17,7 @@
 
 [node name="Dream Gate" parent="." instance=ExtResource( 9 )]
 position = Vector2( 368, 320 )
-dreams = 3
+dreams = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )

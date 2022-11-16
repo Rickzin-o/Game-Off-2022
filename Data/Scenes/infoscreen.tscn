@@ -10,6 +10,7 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Dreams" type="Label" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -200.0
@@ -24,9 +25,9 @@ valign = 1
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -200.0
-margin_top = 40.0
+margin_top = 16.0
 margin_right = -16.0
-margin_bottom = 64.0
+margin_bottom = 40.0
 text = "$0"
 align = 2
 valign = 1

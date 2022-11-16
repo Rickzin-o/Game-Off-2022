@@ -3,7 +3,8 @@ extends RigidBody2D
 var color_list = [Color8(250, 100, 100), Color8(100, 250, 100), Color8(100, 100, 250), Color8(250, 240, 70)]
 
 func _ready():
-	$Polygon2D.color = color_list[randi() % 4]
+#	$Polygon2D.color = color_list[randi() % 4]
+	$Sprite.frame = randi() % 4
 	apply_impulse(Vector2.ZERO, Vector2(rand_range(-60, 60), -100))
 
 

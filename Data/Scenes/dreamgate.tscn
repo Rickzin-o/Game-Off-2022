@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Data/Others/kenpixel_high.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Data/Code/dreamgate.gd" type="Script" id=2]
+[ext_resource path="res://Data/Images/Pilar.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -23,9 +24,10 @@ height = 80.0
 [node name="Dream Gate" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color( 0.705882, 0.705882, 0.705882, 1 )
-polygon = PoolVector2Array( -24, -64, -16, -48, -16, 48, -24, 64, 24, 64, 16, 48, 16, -48, 24, -64 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 1.90735e-06 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.901961, 0.27451, 0.27451, 1 )
