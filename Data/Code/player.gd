@@ -1,9 +1,10 @@
 extends KinematicBody2D
 class_name Player
 
-const MAX_SPEED = 250
+const MAX_SPEED = 230
 const ACCELERATION = 25
-const GRAVITY = 22
+const GRAVITY = 23
+
 const MAX_GRAVITY = 500
 const JUMP_FORCE = 600
 
@@ -14,6 +15,7 @@ var intangible = false
 var dead = false
 var movement = Vector2()
 
+onready var animtree = $AnimationTree
 onready var camAnim = $Camera2D/Tween
 onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
 
@@ -27,12 +29,17 @@ func _physics_process(delta):
 	movement.y = min(movement.y + GRAVITY * (delta*60), MAX_GRAVITY)
 	
 	if not glob.talking:
+		animtree.set('parameters/GroundAction/current', movement.length() > 80)
+		animtree.set('parameters/AirAction/current', movement.y > 0)
+		
 		if Input.is_action_pressed("ui_right"):
 			friction = false
 			movement.x = min(movement.x + ACCELERATION, MAX_SPEED)
+			$Playersheet.flip_h = false
 		elif Input.is_action_pressed("ui_left"):
 			friction = false
 			movement.x = max(movement.x - ACCELERATION, -MAX_SPEED)
+			$Playersheet.flip_h = true
 		else:
 			friction = true
 		
@@ -67,7 +74,7 @@ func _physics_process(delta):
 		glob.health = glob.maxHealth
 		get_tree().change_scene_to(doorsroom)
 	
-	
+	animtree.set('parameters/FloorState/current', int(air_timer < 0))
 	movement = move_and_slide(movement, Vector2.UP)
 
 func _unhandled_input(event):

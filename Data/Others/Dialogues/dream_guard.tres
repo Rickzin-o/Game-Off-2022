@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 15
+resource_version = 25
 syntax_version = 2
 raw_text = "~ presentation
 
-Guard: Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]
+Guard: Oh, you're the [wave amp=25 freq=5][color=purple]Dreamer?[/color][/wave]
 Guard: Here are some [i]choices[/i].
 - Say \"Hi\"
 	Guard: Hello!
@@ -18,7 +18,7 @@ Guard: Here are some [i]choices[/i].
 - End the conversation. => END
 
 ~ explain
-Guard: You're the Dreamer, i'm the Guard.
+Guard: You're the [color=purple]Dreamer[/color], i'm the Guard.
 Guard: That's how things work."
 errors = [  ]
 titles = {
@@ -41,8 +41,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "13",
 "replacements": [  ],
-"text": "You're the Dreamer, i'm the Guard.",
-"translation_key": "You're the Dreamer, i'm the Guard.",
+"text": "You're the [color=purple]Dreamer[/color], i'm the Guard.",
+"translation_key": "You're the [color=purple]Dreamer[/color], i'm the Guard.",
 "type": "dialogue"
 },
 "13": {
@@ -59,8 +59,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "3",
 "replacements": [  ],
-"text": "Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]",
-"translation_key": "Oh, you're the [wave amp=25 freq=5]Dreamer?[/wave]",
+"text": "Oh, you're the [wave amp=25 freq=5][color=purple]Dreamer?[/color][/wave]",
+"translation_key": "Oh, you're the [wave amp=25 freq=5][color=purple]Dreamer?[/color][/wave]",
 "type": "dialogue"
 },
 "3": {

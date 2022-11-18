@@ -24,11 +24,10 @@ position = Vector2( 96, -672 )
 position = Vector2( 80, 480 )
 collision_layer = 5
 
-[node name="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" parent="Player" index="3"]
 limit_left = 0
 limit_right = 2048
 limit_bottom = 704
-limit_smoothed = false
 
 [node name="Objects" type="Node2D" parent="."]
 
