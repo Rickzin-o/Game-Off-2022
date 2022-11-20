@@ -6,6 +6,7 @@ func _ready():
 	glob.connect("end_level", self, "save_things")
 	glob.health = glob.maxHealth
 	glob.dreams = 0
+	glob.room = room
 	if room in glob.storage['levels']:
 		self.remove_child($Dreams)
 		glob.totalDreams = 0

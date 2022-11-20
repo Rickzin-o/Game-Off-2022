@@ -1,0 +1,59 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 5
+syntax_version = 2
+raw_text = "~ trash_can
+
+ : It's a trash can.
+ : You found [color=green]$20[/color]!
+
+~ empty
+ : It's a empty trash can."
+errors = [  ]
+titles = {
+"empty": "6",
+"trash_can": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "trash_can",
+"type": "title"
+},
+"2": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "It's a trash can.",
+"translation_key": "It's a trash can.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "You found [color=green]$20[/color]!",
+"translation_key": "You found [color=green]$20[/color]!",
+"type": "dialogue"
+},
+"5": {
+"next_id": "6",
+"text": "empty",
+"type": "title"
+},
+"6": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "It's a empty trash can.",
+"translation_key": "It's a empty trash can.",
+"type": "dialogue"
+}
+}

@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	offset = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount))
 
-func screenshake(new_shake, shake_time=0.3, limit=100):
+func screenshake(new_shake, shake_time: float = 0.3, limit: int = 100):
 	shake_amount += new_shake
 	if shake_amount > limit:
 		shake_amount = limit

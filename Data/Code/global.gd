@@ -11,9 +11,11 @@ var talking := false
 
 var dreams := 0
 var totalDreams := 0
+var room = ''
 
 var health := 100
 var maxHealth := 100
+var damage := 10
 
 func finish_dialogue():
 	talking = false
