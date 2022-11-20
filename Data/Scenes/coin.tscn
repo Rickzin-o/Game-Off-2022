@@ -27,7 +27,7 @@ texture = ExtResource( 2 )
 hframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
