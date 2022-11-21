@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Data/Code/configs.gd" type="Script" id=1]
+[ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.705882, 0.952941, 0.827451, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SFXVolume" type="HSlider" parent="."]
+margin_left = 128.0
+margin_top = 64.0
+margin_right = 328.0
+margin_bottom = 128.0
+max_value = 10.0
+value = 10.0
+
+[node name="Label" type="Label" parent="SFXVolume"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 24.0
+text = "10"
+align = 1
+valign = 1
+
+[node name="SFX" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 128.0
+text = "SFX"
+align = 1
+valign = 1
+
+[connection signal="value_changed" from="SFXVolume" to="." method="_on_SFXVolume_value_changed"]

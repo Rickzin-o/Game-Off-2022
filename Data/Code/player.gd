@@ -36,6 +36,7 @@ func _physics_process(delta):
 	if not glob.talking:
 		animtree.set('parameters/GroundAction/current', movement.length() > 80)
 		animtree.set('parameters/AirAction/current', movement.y > 0)
+		animtree.set('parameters/WalkSpeed/scale', (max(movement.x, -movement.x)) / 100)
 		
 		if Input.is_action_pressed("ui_right") and not dashing:
 			friction = false

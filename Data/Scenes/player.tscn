@@ -185,7 +185,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "walk"
-length = 1.8
+length = 1.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Playersheet:frame")
@@ -256,7 +256,7 @@ animation = "walk"
 [sub_resource type="AnimationNodeTimeScale" id=19]
 
 [sub_resource type="AnimationNodeBlendTree" id=14]
-graph_offset = Vector2( 0, 133.333 )
+graph_offset = Vector2( -835.787, -510.04 )
 nodes/Action/node = SubResource( 13 )
 nodes/Action/position = Vector2( 469.333, 85.3333 )
 nodes/AirAction/node = SubResource( 16 )
@@ -282,7 +282,7 @@ nodes/Walk/position = Vector2( -426.667, -426.667 )
 nodes/WalkSpeed/node = SubResource( 19 )
 nodes/WalkSpeed/position = Vector2( -256, -426.667 )
 nodes/output/position = Vector2( 768, 85.3333 )
-node_connections = [ "output", 0, "Action", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death" ]
+node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 22

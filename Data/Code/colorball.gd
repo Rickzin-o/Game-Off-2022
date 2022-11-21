@@ -7,7 +7,7 @@ onready var hitbox = $Hitbox
 onready var sprite = $ColorRect
 
 func _ready():
-	modulate = [Color(1, 0.1, 0.1), Color(0.1, 1, 0.1), Color(0.1, 0.1, 1)][randi() % 3]
+	modulate = [Color(1, 0.2, 0.2), Color(0.2, 1, 0.2), Color(0.2, 0.2, 1)][randi() % 3]
 	apply_impulse(Vector2(), Vector2(480 * direction, 0))
 
 func disappear():

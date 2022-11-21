@@ -10,6 +10,7 @@ onready var use_timer = $DashTimer
 onready var ghost_timer = $GhostTimer
 
 func start_dash(duration: float, sprite):
+	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXDash.ogg"))
 	self.sprite = sprite
 	dash_color = colors[randi() % 6]
 	
