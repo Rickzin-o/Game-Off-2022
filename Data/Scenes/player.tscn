@@ -282,7 +282,7 @@ nodes/Walk/position = Vector2( -426.667, -426.667 )
 nodes/WalkSpeed/node = SubResource( 19 )
 nodes/WalkSpeed/position = Vector2( -256, -426.667 )
 nodes/output/position = Vector2( 768, 85.3333 )
-node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "WalkSpeed", 0, "Walk" ]
+node_connections = [ "output", 0, "Action", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 22
@@ -307,6 +307,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 4.0
 editor_draw_limits = true
@@ -338,7 +339,7 @@ anims/walk = SubResource( 6 )
 tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimPlayer")
 active = true
-parameters/Action/current = 1
+parameters/Action/current = 0
 parameters/AirAction/current = 0
 parameters/FloorState/current = 0
 parameters/GroundAction/current = 0

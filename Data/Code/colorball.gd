@@ -8,7 +8,7 @@ onready var sprite = $ColorRect
 
 func _ready():
 	modulate = [Color(1, 0.1, 0.1), Color(0.1, 1, 0.1), Color(0.1, 0.1, 1)][randi() % 3]
-	apply_impulse(Vector2(), Vector2(400 * direction, 0))
+	apply_impulse(Vector2(), Vector2(480 * direction, 0))
 
 func disappear():
 	particles.set_emitting(true)
