@@ -15,6 +15,7 @@ color = Color( 0.784314, 0.784314, 0.784314, 1 )
 polygon = PoolVector2Array( -16, 16, -16, 8, 0, 8, 8, -16, 16, -16, 8, 8, 16, 8, 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
