@@ -1,0 +1,67 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 19
+syntax_version = 2
+raw_text = "~ buy_or_talk
+
+- Buy something
+	do emit(\"shop\")
+- Talk
+	Shopkeeper: [[See ya|It's a beautiful day outside.]]"
+errors = [  ]
+titles = {
+"buy_or_talk": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "buy_or_talk",
+"type": "title"
+},
+"2": {
+"next_id": "3",
+"next_id_after": "end!",
+"replacements": [  ],
+"responses": PoolStringArray( "2", "4" ),
+"text": "Buy something",
+"translation_key": "Buy something",
+"type": "response"
+},
+"3": {
+"mutation": {
+"expression": [ {
+"function": "emit",
+"type": "function",
+"value": [ [ {
+"type": "string",
+"value": "shop"
+} ] ]
+} ]
+},
+"next_id": "end!",
+"parent_id": "2",
+"type": "mutation"
+},
+"4": {
+"next_id": "5",
+"next_id_after": "end!",
+"replacements": [  ],
+"text": "Talk",
+"translation_key": "Talk",
+"type": "response"
+},
+"5": {
+"character": "Shopkeeper",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "4",
+"replacements": [  ],
+"text": "[[See ya|It's a beautiful day outside.]]",
+"translation_key": "[[See ya|It's a beautiful day outside.]]",
+"type": "dialogue"
+}
+}

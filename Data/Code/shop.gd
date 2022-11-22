@@ -5,11 +5,17 @@ var index: Vector2 = Vector2()
 onready var rect := $ColorRect
 onready var reference := $ReferenceRect
 onready var info_rect := $InfoRect
+onready var money := $Label
 onready var num_items = rect.get_child_count()
 onready var lines = ceil(float(num_items)/3)
 
 func _ready():
-	rect.get_node("Label").text = "Money: $%d" % [glob.storage['money']]
+	set_visibility(false)
+	glob.connect("shop", self, "shop_appear")
+	var first_item_info = get_item_info(rect.get_child(0))
+	set_item_info(first_item_info)
+	money.text = "Money: $%d" % [glob.storage['money']]
+
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_right"):
@@ -37,26 +43,57 @@ func _input(event):
 	
 	var item = rect.get_child(index.x + index.y*3)
 	var item_info = get_item_info(item)
-	info_rect.get_node("Label").text = "%s - %d$" % [item_info['name'], item_info['price']]
-	info_rect.get_node("Description").text = item_info['description']
+	set_item_info(item_info)
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"): #Set item as Sold when ui_accept is pressed
 		if glob.storage['money'] >= item_info['price']:
 			glob.storage['money'] -= item_info['price']
-			rect.get_node("Label").text = "Money: $%d" % [glob.storage['money']]
+			item_sold(item)
+			money.text = "Money: $%d" % [glob.storage['money']]
+
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("ui_cancel") and visible:
+		set_visibility(false, true)
+
+
+func shop_appear():
+	set_visibility(true, true)
+
 
 func reference_positionx(positionx):
 	reference.rect_position.x = positionx
 
+
 func reference_positiony(positiony):
 	reference.rect_position.y = positiony
 
-func index_exist(index: Vector2):
+
+func index_exist(index: Vector2): # Checks if index exist
 	var verify = index.x + (index.y * 3)
 	if verify >= num_items:
 		return false
 	else:
 		return true
 
+
 func get_item_info(item: ShopItem):
 	return {"name": item.item_name, "price": item.price, "description": item.description}
+
+
+func set_item_info(info):
+	info_rect.get_node("Label").text = "%s - %d$" % [info['name'], info['price']]
+	info_rect.get_node("Description").text = ' ' + info['description']
+
+
+func item_sold(item: ShopItem):
+	item.item_name = 'Sold'
+	item.description = ''
+	item.price = 0
+
+func set_visibility(value: bool, set_var: bool = false): # Set Visible and Input Process as Value
+	set_process_input(value)
+	set_visible(value)
+	if set_var: # If set_var is true, variables will also be set as Value
+		glob.talking = value
+		glob.shopping = value

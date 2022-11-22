@@ -7,6 +7,8 @@ export(Vector2) var direction = Vector2(0, 1)
 onready var beg := $Beginning
 onready var end := $End
 
+func _ready():
+	$Animation.play("effect")
 
 func _process(delta):
 	$Platform.position += direction * (speed * delta * 60)

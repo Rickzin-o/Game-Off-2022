@@ -51,8 +51,8 @@ margin_top = 160.0
 margin_right = 96.0
 margin_bottom = 224.0
 script = ExtResource( 2 )
-item_name = "Perk 1"
-description = "It's perk 1"
+item_name = "Cloud Boots"
+description = "Increase your speed"
 
 [node name="ColorRect5" type="ColorRect" parent="ColorRect"]
 margin_left = 128.0
@@ -61,8 +61,8 @@ margin_right = 192.0
 margin_bottom = 224.0
 script = ExtResource( 2 )
 price = 150
-item_name = "Perk 2"
-description = "It's perk 2"
+item_name = "Half Key"
+description = "It's half of a lost key"
 
 [node name="ColorRect6" type="ColorRect" parent="ColorRect"]
 margin_left = 224.0
@@ -71,8 +71,8 @@ margin_right = 288.0
 margin_bottom = 224.0
 script = ExtResource( 2 )
 price = 200
-item_name = "Perk 3"
-description = "It's peter perk 3"
+item_name = "Perk 1"
+description = "It's peter perk"
 
 [node name="ColorRect7" type="ColorRect" parent="ColorRect"]
 margin_left = 32.0
@@ -81,14 +81,14 @@ margin_right = 96.0
 margin_bottom = 352.0
 script = ExtResource( 2 )
 price = 250
-item_name = "Perk 4"
-description = "It's perk 4"
+item_name = "Perk 2"
+description = "It's perk 2"
 
-[node name="Label" type="Label" parent="ColorRect"]
-margin_left = 8.0
-margin_top = 488.0
-margin_right = 96.0
-margin_bottom = 504.0
+[node name="Label" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 552.0
+margin_right = 160.0
+margin_bottom = 568.0
 theme = ExtResource( 4 )
 text = "Money: $000"
 align = 1
@@ -116,14 +116,14 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 184.0
 margin_bottom = 24.0
-text = "Name - 000$"
-align = 1
+text = "Name - 0$"
 valign = 1
 
 [node name="Description" type="RichTextLabel" parent="InfoRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 32.0
-margin_right = 448.0
-margin_bottom = 128.0
+margin_right = -32.0
 theme = ExtResource( 4 )
-text = "something something"
+text = " something something"
