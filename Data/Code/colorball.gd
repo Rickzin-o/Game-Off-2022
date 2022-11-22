@@ -7,6 +7,7 @@ onready var hitbox = $Hitbox
 onready var sprite = $ColorRect
 
 func _ready():
+	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXIThinkThatsAShoot.wav"))
 	modulate = [Color(1, 0.2, 0.2), Color(0.2, 1, 0.2), Color(0.2, 0.2, 1)][randi() % 3]
 	apply_impulse(Vector2(), Vector2(480 * direction, 0))
 

@@ -41,9 +41,13 @@ tracks/0/keys = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, 384 )
 
-[node name="Effects" parent="Player" index="3"]
+[node name="Effects" parent="Player" index="4"]
 anims/RESET = SubResource( 1 )
 anims/hurted = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+collision_layer = 2
+format = 1
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 

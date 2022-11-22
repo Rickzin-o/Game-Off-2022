@@ -67,6 +67,7 @@ func _physics_process(delta):
 			air_timer = 0
 			jump_remember = 0
 			movement.y = -JUMP_FORCE
+			SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXJump.wav"))
 		
 		set_collision_layer_bit(0, !dash.is_dashing())
 		if dash.is_dashing():

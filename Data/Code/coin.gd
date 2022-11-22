@@ -13,5 +13,6 @@ func _on_Coin_body_entered(body):
 
 
 func _on_Area2D_body_entered(body):
+	SoundManager.play_sound(load("res://Data/Sounds/SFX/Coins/SFXCoin%d.wav" % [randi() % 3 + 1]))
 	glob.storage['money'] += 10
 	queue_free()

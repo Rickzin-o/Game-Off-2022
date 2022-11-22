@@ -43,7 +43,7 @@ margin_right = 288.0
 margin_bottom = 96.0
 script = ExtResource( 2 )
 item_name = "+ Damage"
-description = "Deal more damage in enemies"
+description = "Deal more damage"
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect"]
 margin_left = 32.0

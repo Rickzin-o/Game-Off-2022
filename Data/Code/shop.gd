@@ -36,7 +36,6 @@ func _input(event):
 	reference_positiony(index.y * 128 + 96)
 	
 	var item = rect.get_child(index.x + index.y*3)
-	print(index.x + index.y*3)
 	var item_info = get_item_info(item)
 	info_rect.get_node("Label").text = "%s - %d$" % [item_info['name'], item_info['price']]
 	info_rect.get_node("Description").text = item_info['description']

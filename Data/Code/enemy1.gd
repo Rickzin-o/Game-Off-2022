@@ -36,7 +36,7 @@ func _physics_process(delta):
 func die():
 	direction = 0
 	if not glob.room in glob.storage['levels']:
-		for i in range(2):
+		for i in range(1):
 			var coin = money.instance()
 			coin.position = global_position
 			get_tree().current_scene.add_child(coin)
@@ -55,6 +55,7 @@ func _on_Hurtbox_area_entered(area):
 		var collision_point = sign(global_position.x - ball.global_position.x)
 		recoil = Vector2(collision_point * 30, 0)
 		ball.disappear()
+	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
 	health -= glob.damage
 	anim.play("hit")
 	if health <= 0:
