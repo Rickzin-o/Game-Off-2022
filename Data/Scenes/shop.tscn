@@ -25,6 +25,11 @@ margin_bottom = 96.0
 script = ExtResource( 2 )
 item_name = "+ Max Health"
 description = "Add 20 Max HP"
+effect = {
+"Damage": 0,
+"Health": 20,
+"Item": ""
+}
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 margin_left = 128.0
@@ -34,7 +39,12 @@ margin_bottom = 96.0
 script = ExtResource( 2 )
 price = 200
 item_name = "+ Max Health"
-description = "Add 40 Max HP"
+description = "Add 30 Max HP"
+effect = {
+"Damage": 0,
+"Health": 30,
+"Item": ""
+}
 
 [node name="ColorRect3" type="ColorRect" parent="ColorRect"]
 margin_left = 224.0
@@ -44,6 +54,11 @@ margin_bottom = 96.0
 script = ExtResource( 2 )
 item_name = "+ Damage"
 description = "Deal more damage"
+effect = {
+"Damage": 10,
+"Health": 0,
+"Item": ""
+}
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect"]
 margin_left = 32.0
@@ -53,6 +68,11 @@ margin_bottom = 224.0
 script = ExtResource( 2 )
 item_name = "Cloud Boots"
 description = "Increase your speed"
+effect = {
+"Damage": 0,
+"Health": 0,
+"Item": "Boots"
+}
 
 [node name="ColorRect5" type="ColorRect" parent="ColorRect"]
 margin_left = 128.0
@@ -61,8 +81,13 @@ margin_right = 192.0
 margin_bottom = 224.0
 script = ExtResource( 2 )
 price = 150
-item_name = "Half Key"
-description = "It's half of a lost key"
+item_name = "Key Fragment"
+description = "It's a lost key fragment"
+effect = {
+"Damage": 0,
+"Health": 0,
+"Item": "KeyFrag"
+}
 
 [node name="ColorRect6" type="ColorRect" parent="ColorRect"]
 margin_left = 224.0

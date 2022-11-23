@@ -53,6 +53,7 @@ dialogue = "presentation"
 
 [node name="Sprite" parent="NPCs/NPC" index="0"]
 animation = "2"
+frame = 0
 
 [node name="NPC2" parent="NPCs" instance=ExtResource( 7 )]
 position = Vector2( -192, 384 )

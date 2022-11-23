@@ -49,6 +49,7 @@ func _input(event):
 		if glob.storage['money'] >= item_info['price']:
 			glob.storage['money'] -= item_info['price']
 			item_sold(item)
+			item_effect(item)
 			money.text = "Money: $%d" % [glob.storage['money']]
 
 
@@ -90,6 +91,12 @@ func item_sold(item: ShopItem):
 	item.item_name = 'Sold'
 	item.description = ''
 	item.price = 0
+
+func item_effect(item: ShopItem): # Set changes when player buy item
+	if item.effect['Health'] > 0:
+		glob.maxHealth += item.effect['Health']
+	if item.effect['Damage'] > 0:
+		glob.damage += item.effect['Damage']
 
 func set_visibility(value: bool, set_var: bool = false): # Set Visible and Input Process as Value
 	set_process_input(value)
