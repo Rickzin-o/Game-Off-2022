@@ -149,7 +149,7 @@ func _on_response_gui_input(event, item):
 	
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
 		next(dialogue.responses[item.get_index()].next_id)
-	elif event.is_action_pressed("ui_accept") and item in get_responses():
+	elif event.is_action_pressed("interact") and item in get_responses():
 		next(dialogue.responses[item.get_index()].next_id)
 
 
@@ -161,5 +161,5 @@ func _on_Balloon_gui_input(event):
 	
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
 		next(dialogue.next_id)
-	elif event.is_action_pressed("ui_accept") and balloon.get_focus_owner() == balloon:
+	elif event.is_action_pressed("interact") and balloon.get_focus_owner() == balloon:
 		next(dialogue.next_id)

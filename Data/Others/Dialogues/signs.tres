@@ -1,0 +1,59 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 5
+syntax_version = 2
+raw_text = "~ sign1
+
+ : This is a sign.
+ : Nice to meet you.
+
+~ sign2
+ : Beware!"
+errors = [  ]
+titles = {
+"sign1": "2",
+"sign2": "6"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "sign1",
+"type": "title"
+},
+"2": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "This is a sign.",
+"translation_key": "This is a sign.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Nice to meet you.",
+"translation_key": "Nice to meet you.",
+"type": "dialogue"
+},
+"5": {
+"next_id": "6",
+"text": "sign2",
+"type": "title"
+},
+"6": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Beware!",
+"translation_key": "Beware!",
+"type": "dialogue"
+}
+}
