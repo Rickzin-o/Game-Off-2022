@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Data/Images/Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Data/Images/Tileset2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14, 16 )
+extents = Vector2( 15, 16 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 16 )
 
 [node name="Tileset" type="Node2D"]
@@ -20,7 +23,7 @@ vframes = 3
 [node name="StaticBody2D" type="StaticBody2D" parent="Dirt1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt1/StaticBody2D"]
-position = Vector2( 2, 0 )
+position = Vector2( 1, 0 )
 shape = SubResource( 5 )
 
 [node name="Dirt2" type="Sprite" parent="."]
@@ -45,7 +48,7 @@ frame = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="Dirt3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt3/StaticBody2D"]
-position = Vector2( -2, 0 )
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
 
 [node name="Pedra1" type="Sprite" parent="."]
@@ -58,7 +61,7 @@ frame = 3
 [node name="StaticBody2D" type="StaticBody2D" parent="Pedra1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pedra1/StaticBody2D"]
-position = Vector2( 2, 0 )
+position = Vector2( 1, 0 )
 shape = SubResource( 5 )
 
 [node name="Pedra2" type="Sprite" parent="."]
@@ -83,7 +86,7 @@ frame = 5
 [node name="StaticBody2D" type="StaticBody2D" parent="Pedra3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pedra3/StaticBody2D"]
-position = Vector2( -2, 0 )
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
 
 [node name="Pedra4" type="Sprite" parent="."]
@@ -96,7 +99,7 @@ frame = 6
 [node name="StaticBody2D" type="StaticBody2D" parent="Pedra4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pedra4/StaticBody2D"]
-position = Vector2( 2, 0 )
+position = Vector2( 1, 0 )
 shape = SubResource( 5 )
 
 [node name="Pedra5" type="Sprite" parent="."]
@@ -121,7 +124,7 @@ frame = 8
 [node name="StaticBody2D" type="StaticBody2D" parent="Pedra6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pedra6/StaticBody2D"]
-position = Vector2( -2, 0 )
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
 
 [node name="SingleL1" type="Sprite" parent="."]
@@ -133,7 +136,7 @@ vframes = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="SingleL1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SingleL1/StaticBody2D"]
-position = Vector2( 2, 0 )
+position = Vector2( 1, 0 )
 shape = SubResource( 5 )
 
 [node name="SingleL2" type="Sprite" parent="."]
@@ -158,5 +161,41 @@ frame = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="SingleL3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SingleL3/StaticBody2D"]
-position = Vector2( -2, 0 )
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
+
+[node name="SingleB1" type="Sprite" parent="."]
+position = Vector2( 16, 208 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 2
+frame = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SingleB1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SingleB1/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="SingleB2" type="Sprite" parent="."]
+position = Vector2( 64, 208 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SingleB2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SingleB2/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="SingleB3" type="Sprite" parent="."]
+position = Vector2( 112, 208 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 2
+frame = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SingleB3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SingleB3/StaticBody2D"]
+shape = SubResource( 6 )
