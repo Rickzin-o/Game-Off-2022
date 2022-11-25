@@ -26,7 +26,7 @@ position = Vector2( 1936, -960 )
 position = Vector2( 96, -352 )
 
 [node name="Sign" parent="." instance=ExtResource( 14 )]
-position = Vector2( 152, 512 )
+position = Vector2( 1312, 32 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, 480 )
