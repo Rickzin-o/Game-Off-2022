@@ -10,6 +10,7 @@ onready var num_items = rect.get_child_count()
 onready var lines = ceil(float(num_items)/3)
 
 func _ready():
+	check_items()
 	set_visibility(false)
 	glob.connect("shop", self, "shop_appear")
 	var first_item_info = get_item_info(rect.get_child(0))
@@ -46,7 +47,7 @@ func _input(event):
 	set_item_info(item_info)
 	
 	if Input.is_action_just_pressed("ui_accept"): #Set item as Sold when ui_accept is pressed
-		if glob.storage['money'] >= item_info['price']:
+		if item_info['name'] != "Sold" and glob.storage['money'] >= item_info['price']:
 			glob.storage['money'] -= item_info['price']
 			item_sold(item)
 			item_effect(item)
@@ -78,6 +79,12 @@ func index_exist(index: Vector2): # Checks if index exist
 		return true
 
 
+func check_items():
+	for child in rect.get_children():
+		if child is ShopItem:
+			if child.item_name in glob.items: item_sold(child)
+
+
 func get_item_info(item: ShopItem):
 	return {"name": item.item_name, "price": item.price, "description": item.description}
 
@@ -88,6 +95,7 @@ func set_item_info(info):
 
 
 func item_sold(item: ShopItem):
+	if not item.item_name in glob.items: glob.items.append(item.item_name)
 	item.item_name = 'Sold'
 	item.description = ''
 	item.price = 0

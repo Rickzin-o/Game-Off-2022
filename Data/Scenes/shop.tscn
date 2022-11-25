@@ -23,7 +23,7 @@ margin_top = 32.0
 margin_right = 96.0
 margin_bottom = 96.0
 script = ExtResource( 2 )
-item_name = "+ Max Health"
+item_name = "Max Health+"
 description = "Add 20 Max HP"
 effect = {
 "Damage": 0,
@@ -38,7 +38,7 @@ margin_right = 192.0
 margin_bottom = 96.0
 script = ExtResource( 2 )
 price = 200
-item_name = "+ Max Health"
+item_name = "Max Health++"
 description = "Add 30 Max HP"
 effect = {
 "Damage": 0,
@@ -52,7 +52,7 @@ margin_top = 32.0
 margin_right = 288.0
 margin_bottom = 96.0
 script = ExtResource( 2 )
-item_name = "+ Damage"
+item_name = "Damage+"
 description = "Deal more damage"
 effect = {
 "Damage": 10,

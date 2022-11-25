@@ -9,6 +9,7 @@ signal shop
 var storage = {'dreams': 0, 'money': 1000, 'levels': []}
 var playersave = {'save_pos': false, 'position': Vector2()}
 var configs = {'sfx': 10, 'music': 10}
+var items := []
 var talking := false
 var shopping := false
 
