@@ -82,6 +82,7 @@ position = Vector2( 80, 480 )
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_left = 0
+limit_right = 8800
 limit_bottom = 832
 
 [node name="Objects" type="Node2D" parent="."]

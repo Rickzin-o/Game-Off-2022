@@ -47,7 +47,7 @@ goTo = ExtResource( 11 )
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="NPC" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( -32, 384 )
+position = Vector2( 64, 384 )
 resource = ExtResource( 8 )
 dialogue = "presentation"
 
@@ -56,7 +56,7 @@ animation = "2"
 frame = 0
 
 [node name="NPC2" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( -192, 384 )
+position = Vector2( 608, 384 )
 resource = ExtResource( 14 )
 dialogue = "buy_or_talk"
 

@@ -15,10 +15,12 @@ func _on_Return_pressed():
 
 func _on_Restart_pressed():
 	if visible:
+		glob.money_reset()
 		get_tree().set_pause(false)
 		get_tree().reload_current_scene()
 
 func _on_Quit_pressed():
 	if visible:
+		glob.money_reset()
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://Data/Scenes/menuprincipal.tscn")

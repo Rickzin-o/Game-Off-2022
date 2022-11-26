@@ -14,7 +14,7 @@ func interact():
 	if not playerinside: return
 	
 	glob.talking = true
-	if empty:
+	if empty or glob.room in glob.storage['levels']:
 		DialogueManager.show_example_dialogue_balloon("empty", trash_dialogue)
 	else:
 		empty = true

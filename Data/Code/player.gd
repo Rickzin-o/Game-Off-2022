@@ -102,6 +102,7 @@ func _physics_process(delta):
 		glob.emit_signal("transition")
 		yield(get_tree().create_timer(1), "timeout")
 		glob.health = glob.maxHealth
+		glob.money_reset()
 		get_tree().change_scene_to(doorsroom)
 	
 	animtree.set('parameters/FloorState/current', int(air_timer < 0))

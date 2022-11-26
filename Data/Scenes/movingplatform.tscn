@@ -4,7 +4,7 @@
 [ext_resource path="res://Data/Images/Cloud.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 10 )
+extents = Vector2( 48, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 4, 4 )
@@ -86,7 +86,7 @@ offset = Vector2( 0, -1 )
 position = Vector2( 0, 4 )
 shape = SubResource( 1 )
 one_way_collision = true
-one_way_collision_margin = 20.0
+one_way_collision_margin = 12.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 shape = SubResource( 3 )

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 5
+resource_version = 10
 syntax_version = 2
 raw_text = "~ sign1
 
@@ -12,17 +12,41 @@ raw_text = "~ sign1
  : Nice to meet you.
 
 ~ sign2
- : Beware!"
+ : Beware!
+
+~ sign3
+ : \"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"
+ : \"Yeah[wait=0.5], i didn't know too.\"
+ : [i]The design of this game seems really poor.[/i]"
 errors = [  ]
 titles = {
 "sign1": "2",
-"sign2": "6"
+"sign2": "6",
+"sign3": "9"
 }
 lines = {
 "0": {
 "next_id": "2",
 "text": "sign1",
 "type": "title"
+},
+"10": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "11",
+"replacements": [  ],
+"text": "\"Yeah[wait=0.5], i didn't know too.\"",
+"translation_key": "\"Yeah[wait=0.5], i didn't know too.\"",
+"type": "dialogue"
+},
+"11": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "[i]The design of this game seems really poor.[/i]",
+"translation_key": "[i]The design of this game seems really poor.[/i]",
+"type": "dialogue"
 },
 "2": {
 "character": "",
@@ -54,6 +78,20 @@ lines = {
 "replacements": [  ],
 "text": "Beware!",
 "translation_key": "Beware!",
+"type": "dialogue"
+},
+"8": {
+"next_id": "9",
+"text": "sign3",
+"type": "title"
+},
+"9": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "10",
+"replacements": [  ],
+"text": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
+"translation_key": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
 "type": "dialogue"
 }
 }

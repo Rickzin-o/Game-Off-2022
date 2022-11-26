@@ -16,10 +16,14 @@ var shopping := false
 var dreams := 0
 var totalDreams := 0
 var room = ''
+var savemoney = storage['money']
 
 var health := 100
 var maxHealth := 100
 var damage := 10
+
+func money_reset():
+	storage['money'] = savemoney
 
 func finish_dialogue():
 	talking = false if not shopping else true
