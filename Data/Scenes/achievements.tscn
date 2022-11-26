@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
+
+[node name="Achievements" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.705882, 0.952941, 0.827451, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -96.0
+margin_right = 320.0
+margin_bottom = 192.0
+theme = ExtResource( 1 )
+custom_constants/separation = 96
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 288.0
+size_flags_horizontal = 3
+custom_constants/separation = 96
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+color = Color( 0.862745, 0.705882, 0.901961, 1 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect"]
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 32.0
+text = "Collector"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 192.0
+margin_right = 256.0
+margin_bottom = 288.0
+size_flags_vertical = 3
+color = Color( 0.862745, 0.705882, 0.901961, 1 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect2"]
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 32.0
+text = "Pacifist"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 352.0
+margin_right = 608.0
+margin_bottom = 288.0
+size_flags_horizontal = 3
+custom_constants/separation = 96
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 256.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+color = Color( 0.862745, 0.705882, 0.901961, 1 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect"]
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 32.0
+text = "Shopping"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 192.0
+margin_right = 256.0
+margin_bottom = 288.0
+size_flags_vertical = 3
+color = Color( 0.862745, 0.705882, 0.901961, 1 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
+margin_left = 88.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 43.0
+text = "???"
+align = 1
+valign = 1

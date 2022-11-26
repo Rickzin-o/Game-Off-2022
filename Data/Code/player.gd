@@ -88,12 +88,12 @@ func _physics_process(delta):
 	if is_on_floor():
 		air_timer = 6
 		if friction:
-			movement.x = lerp(movement.x, 0, 0.06)
+			movement.x = lerp(movement.x, 0, 0.075)
 	else:
 		air_timer -= 1
 		jump_remember -= 1
 		if friction:
-			movement.x = lerp(movement.x, 0, 0.07)
+			movement.x = lerp(movement.x, 0, 0.1)
 	
 	if glob.health <= 0 and not dead:
 		glob.health = 0
