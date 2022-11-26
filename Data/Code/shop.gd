@@ -105,6 +105,8 @@ func item_effect(item: ShopItem): # Set changes when player buy item
 		glob.maxHealth += item.effect['Health']
 	if item.effect['Damage'] > 0:
 		glob.damage += item.effect['Damage']
+	if item.effect['Item'] == 'Boots':
+		glob.speedboots = 35
 
 func set_visibility(value: bool, set_var: bool = false): # Set Visible and Input Process as Value
 	set_process_input(value)

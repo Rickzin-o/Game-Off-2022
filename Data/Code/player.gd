@@ -40,11 +40,11 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("ui_right") and not dashing:
 			friction = false
-			movement.x = min(movement.x + ACCELERATION, MAX_SPEED)
+			movement.x = min(movement.x + ACCELERATION, MAX_SPEED + glob.speedboots)
 			$Playersheet.flip_h = false
 		elif Input.is_action_pressed("ui_left") and not dashing:
 			friction = false
-			movement.x = max(movement.x - ACCELERATION, -MAX_SPEED)
+			movement.x = max(movement.x - ACCELERATION, -MAX_SPEED - glob.speedboots)
 			$Playersheet.flip_h = true
 		else:
 			friction = true

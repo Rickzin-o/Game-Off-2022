@@ -6,7 +6,7 @@ signal end_level
 signal interaction
 signal shop
 
-var storage = {'dreams': 0, 'money': 1000, 'levels': []}
+var storage = {'dreams': 0, 'money': 0, 'levels': []}
 var playersave = {'save_pos': false, 'position': Vector2()}
 var configs = {'sfx': 10, 'music': 10}
 var items := []
@@ -21,6 +21,7 @@ var savemoney = storage['money']
 var health := 100
 var maxHealth := 100
 var damage := 10
+var speedboots = 0
 
 func money_reset():
 	storage['money'] = savemoney
