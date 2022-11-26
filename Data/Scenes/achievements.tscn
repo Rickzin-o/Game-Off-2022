@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
+[ext_resource path="res://Data/Code/goalrect.gd" type="Script" id=2]
 
 [node name="Achievements" type="Control"]
 anchor_right = 1.0
@@ -34,6 +35,8 @@ margin_right = 256.0
 margin_bottom = 96.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
+script = ExtResource( 2 )
+nome = "Collector"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect"]
 margin_left = 104.0
@@ -50,6 +53,8 @@ margin_right = 256.0
 margin_bottom = 288.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
+script = ExtResource( 2 )
+nome = "Pacifist"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect2"]
 margin_left = 104.0
@@ -72,6 +77,7 @@ margin_right = 256.0
 margin_bottom = 96.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
+script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect"]
 margin_left = 104.0
@@ -88,6 +94,7 @@ margin_right = 256.0
 margin_bottom = 288.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
+script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
 margin_left = 88.0
