@@ -79,7 +79,7 @@ func _physics_process(delta):
 				movement.x = MAX_SPEED * direction
 		
 		if attacking:
-			movement.x /= 3
+			movement.x /= 2.5
 			
 	else:
 		animtree.set('parameters/GroundAction/current', 0)
