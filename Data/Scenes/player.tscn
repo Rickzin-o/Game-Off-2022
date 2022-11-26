@@ -123,6 +123,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=10]
 resource_name = "punch"
 length = 0.5
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Playersheet:frame")
 tracks/0/interp = 1
@@ -130,7 +131,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 11, 12 ]
@@ -142,7 +143,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2, 0.5 ),
+"times": PoolRealArray( 0.15, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -159,7 +160,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0.15 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 2, 0.1, 100 ],
@@ -282,7 +283,7 @@ nodes/Walk/position = Vector2( -426.667, -426.667 )
 nodes/WalkSpeed/node = SubResource( 19 )
 nodes/WalkSpeed/position = Vector2( -256, -426.667 )
 nodes/output/position = Vector2( 768, 85.3333 )
-node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk" ]
+node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 22

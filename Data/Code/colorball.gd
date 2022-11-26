@@ -9,7 +9,7 @@ onready var sprite = $ColorRect
 func _ready():
 	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXIThinkThatsAShoot.wav"))
 	modulate = [Color(1, 0.2, 0.2), Color(0.2, 1, 0.2), Color(0.2, 0.2, 1)][randi() % 3]
-	apply_impulse(Vector2(), Vector2(480 * direction, 0))
+	apply_impulse(Vector2(), Vector2(500 * direction, 0))
 
 func disappear():
 	particles.set_emitting(true)
