@@ -74,7 +74,7 @@ resource = ExtResource( 16 )
 dialogue = "this_is_a_node_title"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -432, 356 )
+position = Vector2( -448, 356 )
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_left = -544

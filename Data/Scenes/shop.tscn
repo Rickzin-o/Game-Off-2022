@@ -52,7 +52,7 @@ margin_top = 32.0
 margin_right = 288.0
 margin_bottom = 96.0
 script = ExtResource( 2 )
-item_name = "Damage+"
+item_name = "Great Ball"
 description = "Deal more damage"
 effect = {
 "Damage": 10,
@@ -114,7 +114,7 @@ margin_top = 448.0
 margin_right = 960.0
 margin_bottom = 576.0
 theme = ExtResource( 3 )
-color = Color( 0.784314, 0.784314, 0.784314, 1 )
+color = Color( 0.941176, 0.745098, 0.941176, 1 )
 
 [node name="Label" type="Label" parent="InfoRect"]
 margin_left = 8.0
