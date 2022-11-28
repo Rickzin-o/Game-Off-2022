@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const VELOCITY = 75
+const VELOCITY = 70
 const DAMAGE = 20
 
-export(int, -1, 1) var direction = 1
+export(int, -1, 1, 2) var direction = 1
 var health = 20
 var recoil = Vector2.ZERO
 var movimento = Vector2()

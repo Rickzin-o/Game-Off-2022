@@ -20,4 +20,4 @@ func _on_Area2D_body_exited(body):
 func _on_Explosion_Hitbox_body_entered(body):
 	if body is Player:
 		if not body.intangible:
-			body.take_damage(5, 25)
+			body.take_damage(6, 30)

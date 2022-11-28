@@ -1,0 +1,162 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.588235 )
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1152, 640 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
+margin_right = 1152.0
+margin_bottom = 640.0
+color = Color( 0.509804, 0.392157, 0.627451, 0.862745 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+motion_scale = Vector2( 1, 0.7 )
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Control" type="Control" parent="ParallaxLayer2"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_right = 1152.0
+margin_bottom = 640.0
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer2/Control"]
+margin_left = 216.0
+margin_right = 344.0
+margin_bottom = 1280.0
+color = Color( 0.537255, 0.196078, 0.54902, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxLayer2/Control"]
+margin_left = 512.0
+margin_top = -128.0
+margin_right = 640.0
+margin_bottom = 1152.0
+color = Color( 0.537255, 0.196078, 0.54902, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="ParallaxLayer2/Control"]
+margin_left = 904.0
+margin_top = -96.0
+margin_right = 1032.0
+margin_bottom = 1184.0
+color = Color( 0.537255, 0.196078, 0.54902, 1 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.862745 )
+motion_scale = Vector2( 1.05, 0.8 )
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Control" type="Control" parent="ParallaxLayer3"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_right = 1152.0
+margin_bottom = 640.0
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 80.0
+margin_top = 208.0
+margin_right = 176.0
+margin_bottom = 848.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 312.0
+margin_top = 280.0
+margin_right = 408.0
+margin_bottom = 920.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="ColorRect3" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 848.0
+margin_top = 320.0
+margin_right = 944.0
+margin_bottom = 960.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="ColorRect6" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 1032.0
+margin_top = 304.0
+margin_right = 1128.0
+margin_bottom = 944.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="ColorRect4" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 664.0
+margin_top = 224.0
+margin_right = 760.0
+margin_bottom = 864.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="ColorRect5" type="ColorRect" parent="ParallaxLayer3/Control"]
+margin_left = 472.0
+margin_top = 352.0
+margin_right = 568.0
+margin_bottom = 992.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.901961 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 520, 352 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 360, 280 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 128, 208 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 712, 224 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 896, 320 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="ParallaxLayer3/Control"]
+position = Vector2( 1080, 304 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 4 )
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+scale_amount = 16.0
+color = Color( 0.784314, 0.117647, 0.705882, 0.27451 )
+color_ramp = SubResource( 1 )

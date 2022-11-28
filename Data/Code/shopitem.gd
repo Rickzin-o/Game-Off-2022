@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 class_name ShopItem
 
 export(int) var price = 100

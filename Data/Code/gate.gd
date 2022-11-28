@@ -13,9 +13,16 @@ func close():
 	twn.interpolate_property(self, "position", position, initial_pos, 1, Tween.TRANS_QUINT, Tween.EASE_OUT)
 	twn.start()
 
-
-func _on_Lever_pressed(state: bool):
+func change_state(state: bool):
 	if state:
 		open()
 	else:
 		close()
+
+func _on_Lever_pressed(state: bool):
+	change_state(state)
+
+
+func _on_Pressure_Button_activated(state: bool):
+	change_state(state)
+

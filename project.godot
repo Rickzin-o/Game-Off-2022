@@ -284,7 +284,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/preview_demo/ScreenLoader.gd"
 }, {
-"base": "ColorRect",
+"base": "TextureRect",
 "class": "ShopItem",
 "language": "GDScript",
 "path": "res://Data/Code/shopitem.gd"

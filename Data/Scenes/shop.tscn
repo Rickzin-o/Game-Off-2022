@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Data/Code/shop.gd" type="Script" id=1]
 [ext_resource path="res://Data/Code/shopitem.gd" type="Script" id=2]
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=3]
 [ext_resource path="res://Data/Others/kpixel.tres" type="Theme" id=4]
+[ext_resource path="res://Data/Images/GameIcons/Health+.png" type="Texture" id=5]
+[ext_resource path="res://Data/Images/GameIcons/Health++.png" type="Texture" id=6]
+[ext_resource path="res://Data/Images/GameIcons/Ball+.png" type="Texture" id=7]
+[ext_resource path="res://Data/Images/GameIcons/CloudBoots.png" type="Texture" id=8]
+[ext_resource path="res://Data/Images/GameIcons/KeyFragment.png" type="Texture" id=9]
 
 [node name="Shop" type="Control"]
 anchor_right = 1.0
@@ -17,11 +22,13 @@ margin_right = 384.0
 margin_bottom = 576.0
 color = Color( 0.784314, 0.784314, 0.784314, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect" type="TextureRect" parent="ColorRect"]
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 96.0
 margin_bottom = 96.0
+texture = ExtResource( 5 )
+expand = true
 script = ExtResource( 2 )
 item_name = "Max Health+"
 description = "Add 20 Max HP"
@@ -31,11 +38,13 @@ effect = {
 "Item": ""
 }
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect2" type="TextureRect" parent="ColorRect"]
 margin_left = 128.0
 margin_top = 32.0
 margin_right = 192.0
 margin_bottom = 96.0
+texture = ExtResource( 6 )
+expand = true
 script = ExtResource( 2 )
 price = 200
 item_name = "Max Health++"
@@ -46,11 +55,13 @@ effect = {
 "Item": ""
 }
 
-[node name="ColorRect3" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect3" type="TextureRect" parent="ColorRect"]
 margin_left = 224.0
 margin_top = 32.0
 margin_right = 288.0
 margin_bottom = 96.0
+texture = ExtResource( 7 )
+expand = true
 script = ExtResource( 2 )
 item_name = "Great Ball"
 description = "Deal more damage"
@@ -60,11 +71,13 @@ effect = {
 "Item": ""
 }
 
-[node name="ColorRect4" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect4" type="TextureRect" parent="ColorRect"]
 margin_left = 32.0
 margin_top = 160.0
 margin_right = 96.0
 margin_bottom = 224.0
+texture = ExtResource( 8 )
+expand = true
 script = ExtResource( 2 )
 item_name = "Cloud Boots"
 description = "Increase your speed in 15%"
@@ -74,15 +87,17 @@ effect = {
 "Item": "Boots"
 }
 
-[node name="ColorRect5" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect5" type="TextureRect" parent="ColorRect"]
 margin_left = 128.0
 margin_top = 160.0
 margin_right = 192.0
 margin_bottom = 224.0
+texture = ExtResource( 9 )
+expand = true
 script = ExtResource( 2 )
 price = 150
 item_name = "Key Fragment"
-description = "It's a lost key fragment"
+description = "It's a key fragment"
 effect = {
 "Damage": 0,
 "Health": 0,

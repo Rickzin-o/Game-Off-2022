@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Data/Scenes/door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Data/Others/tileset.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Data/Scenes/shop.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Data/Others/Dialogues/test.tres" type="Resource" id=16]
 [ext_resource path="res://Data/Scenes/Game/level3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Data/Scenes/Effects and Stuff/background.tscn" type="PackedScene" id=18]
 
 [node name="World" type="Node2D"]
 
@@ -56,15 +57,16 @@ goTo = ExtResource( 17 )
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="NPC" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( 64, 384 )
+position = Vector2( 48, 384 )
 resource = ExtResource( 8 )
 dialogue = "presentation"
 
 [node name="Sprite" parent="NPCs/NPC" index="0"]
 animation = "2"
+frame = 0
 
 [node name="NPC2" parent="NPCs" instance=ExtResource( 7 )]
-position = Vector2( 608, 384 )
+position = Vector2( 400, 384 )
 resource = ExtResource( 14 )
 dialogue = "buy_or_talk"
 
@@ -74,7 +76,7 @@ resource = ExtResource( 16 )
 dialogue = "this_is_a_node_title"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -448, 356 )
+position = Vector2( -432, 356 )
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_left = -544
@@ -109,5 +111,14 @@ visible = false
 
 [node name="Pause State" parent="CanvasLayer" instance=ExtResource( 13 )]
 
+[node name="ParallaxBackground" parent="." instance=ExtResource( 18 )]
+
+[node name="ParallaxLayer2" parent="ParallaxBackground" index="1"]
+visible = false
+
+[node name="ParallaxLayer3" parent="ParallaxBackground" index="2"]
+visible = false
+
 [editable path="NPCs/NPC"]
 [editable path="Player"]
+[editable path="ParallaxBackground"]
