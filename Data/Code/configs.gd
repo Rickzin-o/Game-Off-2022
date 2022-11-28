@@ -1,9 +1,9 @@
 extends Control
 
-onready var sfxslider = $SFXVolume
+onready var soundslider = $MusicVolume
 
 func _ready():
-	sfxslider.value = glob.configs['sfx']
+	soundslider.value = glob.configs['sfx']
 
 
 func _input(event):
@@ -11,7 +11,7 @@ func _input(event):
 		get_tree().change_scene("res://Data/Scenes/menuprincipal.tscn")
 
 
-func _on_SFXVolume_value_changed(value):
-	$SFXVolume/Label.text = str(value)
+func _on_MusicVolume_value_changed(value):
+	$MusicVolume/Label.text = str(value)
 	SoundManager.set_sound_volume(value/10)
 	glob.configs['sfx'] = value

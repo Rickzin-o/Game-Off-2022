@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
 [ext_resource path="res://Data/Code/button.gd" type="Script" id=2]
+[ext_resource path="res://Data/Code/principal.gd" type="Script" id=3]
 [ext_resource path="res://Data/Images/UI/GreenHover.png" type="Texture" id=6]
 [ext_resource path="res://Data/Images/UI/GreenNormal.png" type="Texture" id=7]
 [ext_resource path="res://Data/Images/UI/GreenPressed.png" type="Texture" id=8]
@@ -9,6 +10,7 @@
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

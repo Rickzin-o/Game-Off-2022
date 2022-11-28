@@ -17,15 +17,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SFXVolume" type="HSlider" parent="."]
-margin_left = 128.0
-margin_top = 64.0
-margin_right = 328.0
-margin_bottom = 128.0
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.0
+margin_top = 32.0
+margin_bottom = 68.0
+rect_scale = Vector2( 2, 2 )
+text = "Configurations"
+align = 1
+valign = 1
+
+[node name="MusicVolume" type="HSlider" parent="."]
+margin_left = 144.0
+margin_top = 160.0
+margin_right = 344.0
+margin_bottom = 224.0
 max_value = 10.0
 value = 10.0
 
-[node name="Label" type="Label" parent="SFXVolume"]
+[node name="Label" type="Label" parent="MusicVolume"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -20.0
@@ -35,13 +46,13 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="SFX" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 128.0
-margin_bottom = 128.0
-text = "SFX"
+[node name="Music" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 144.0
+margin_bottom = 224.0
+text = "Sounds"
 align = 1
 valign = 1
 
-[connection signal="value_changed" from="SFXVolume" to="." method="_on_SFXVolume_value_changed"]
+[connection signal="value_changed" from="MusicVolume" to="." method="_on_MusicVolume_value_changed"]

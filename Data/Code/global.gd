@@ -5,6 +5,7 @@ signal transition
 signal end_level
 signal interaction
 signal shop
+signal goal_reached
 
 var storage = {'dreams': 0, 'money': 0, 'levels': []}
 var playersave = {'save_pos': false, 'position': Vector2()}
@@ -23,6 +24,10 @@ var health := 100
 var maxHealth := 100
 var damage := 10
 var speedboots = 0
+
+func _ready():
+	AudioServer.add_bus(1)
+	AudioServer.set_bus_name(1, "Sound")
 
 func money_reset():
 	storage['money'] = savemoney

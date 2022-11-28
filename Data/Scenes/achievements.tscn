@@ -116,7 +116,7 @@ margin_bottom = 288.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
 script = ExtResource( 2 )
-nome = "POF"
+nome = "Power of Friendship"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
 anchor_left = 0.5
