@@ -1,25 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
 [ext_resource path="res://Data/Code/goalrect.gd" type="Script" id=2]
+[ext_resource path="res://Data/Code/achievements.gd" type="Script" id=3]
 
 [node name="Achievements" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.705882, 0.952941, 0.827451, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -576.0
+margin_top = -320.0
+margin_right = 576.0
+margin_bottom = 320.0
+color = Color( 0.6, 0.901961, 0.784314, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 48.0
+margin_bottom = 72.0
+rect_scale = Vector2( 2, 2 )
+text = "Achievements"
+align = 1
+valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -288.0
+margin_left = -304.0
 margin_top = -96.0
-margin_right = 320.0
+margin_right = 304.0
 margin_bottom = 192.0
 theme = ExtResource( 1 )
 custom_constants/separation = 96
@@ -78,13 +98,14 @@ margin_bottom = 96.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
 script = ExtResource( 2 )
+nome = "Merchant"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect"]
 margin_left = 104.0
 margin_top = 8.0
 margin_right = 248.0
 margin_bottom = 32.0
-text = "Shopping"
+text = "Merchant"
 align = 1
 valign = 1
 
@@ -95,12 +116,22 @@ margin_bottom = 288.0
 size_flags_vertical = 3
 color = Color( 0.862745, 0.705882, 0.901961, 1 )
 script = ExtResource( 2 )
+nome = "POF"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
-margin_left = 88.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
 margin_top = 8.0
-margin_right = 248.0
+margin_right = 120.0
 margin_bottom = 43.0
 text = "???"
 align = 1
 valign = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 600.0
+margin_right = 72.0
+margin_bottom = 616.0
+text = "0/4"
