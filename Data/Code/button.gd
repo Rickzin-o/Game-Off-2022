@@ -7,7 +7,7 @@ func _process(delta):
 	if self.is_hovered() and not hover:
 		hover = true
 		var sound = SoundManager.play_ui_sound(load("res://Data/Sounds/SFX/SFXButtonHover.wav"))
-		sound.pitch_scale = 1.3
+		sound.pitch_scale = 1.5
 		sound.set_volume_db(-5)
 	if not self.is_hovered():
 		hover = false

@@ -4,12 +4,11 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 10
+resource_version = 11
 syntax_version = 2
 raw_text = "~ sign1
 
- : This is a sign.
- : Nice to meet you.
+ : \"Monsters ahead, be careful!\"
 
 ~ sign2
  : Beware!
@@ -21,8 +20,8 @@ raw_text = "~ sign1
 errors = [  ]
 titles = {
 "sign1": "2",
-"sign2": "6",
-"sign3": "9"
+"sign2": "5",
+"sign3": "8"
 }
 lines = {
 "0": {
@@ -31,15 +30,6 @@ lines = {
 "type": "title"
 },
 "10": {
-"character": "",
-"character_replacements": [  ],
-"next_id": "11",
-"replacements": [  ],
-"text": "\"Yeah[wait=0.5], i didn't know too.\"",
-"translation_key": "\"Yeah[wait=0.5], i didn't know too.\"",
-"type": "dialogue"
-},
-"11": {
 "character": "",
 "character_replacements": [  ],
 "next_id": "",
@@ -51,27 +41,18 @@ lines = {
 "2": {
 "character": "",
 "character_replacements": [  ],
-"next_id": "3",
-"replacements": [  ],
-"text": "This is a sign.",
-"translation_key": "This is a sign.",
-"type": "dialogue"
-},
-"3": {
-"character": "",
-"character_replacements": [  ],
 "next_id": "",
 "replacements": [  ],
-"text": "Nice to meet you.",
-"translation_key": "Nice to meet you.",
+"text": "\"Monsters ahead, be careful!\"",
+"translation_key": "\"Monsters ahead, be careful!\"",
 "type": "dialogue"
 },
-"5": {
-"next_id": "6",
+"4": {
+"next_id": "5",
 "text": "sign2",
 "type": "title"
 },
-"6": {
+"5": {
 "character": "",
 "character_replacements": [  ],
 "next_id": "",
@@ -80,18 +61,27 @@ lines = {
 "translation_key": "Beware!",
 "type": "dialogue"
 },
-"8": {
-"next_id": "9",
+"7": {
+"next_id": "8",
 "text": "sign3",
 "type": "title"
+},
+"8": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "9",
+"replacements": [  ],
+"text": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
+"translation_key": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
+"type": "dialogue"
 },
 "9": {
 "character": "",
 "character_replacements": [  ],
 "next_id": "10",
 "replacements": [  ],
-"text": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
-"translation_key": "\"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"",
+"text": "\"Yeah[wait=0.5], i didn't know too.\"",
+"translation_key": "\"Yeah[wait=0.5], i didn't know too.\"",
 "type": "dialogue"
 }
 }

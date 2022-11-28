@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=1]
 [ext_resource path="res://Data/Code/goalrect.gd" type="Script" id=2]
 [ext_resource path="res://Data/Code/achievements.gd" type="Script" id=3]
+[ext_resource path="res://Data/Images/GameIcons/Collector.png" type="Texture" id=4]
+[ext_resource path="res://Data/Images/GameIcons/Pacifist.png" type="Texture" id=5]
+[ext_resource path="res://Data/Images/GameIcons/Merchant.png" type="Texture" id=6]
+[ext_resource path="res://Data/Images/GameIcons/Misterious.png" type="Texture" id=7]
+[ext_resource path="res://Data/Images/GameIcons/Power of Friendship.png" type="Texture" id=8]
 
 [node name="Achievements" type="Control"]
 anchor_right = 1.0
@@ -54,36 +59,54 @@ custom_constants/separation = 96
 margin_right = 256.0
 margin_bottom = 96.0
 size_flags_vertical = 3
-color = Color( 0.862745, 0.705882, 0.901961, 1 )
+color = Color( 0.913725, 0.760784, 0.917647, 1 )
 script = ExtResource( 2 )
 nome = "Collector"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect"]
-margin_left = 104.0
-margin_top = 8.0
+margin_left = 88.0
+margin_top = 32.0
 margin_right = 248.0
-margin_bottom = 32.0
+margin_bottom = 56.0
 text = "Collector"
 align = 1
 valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/ColorRect"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 4 )
+expand = true
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
 margin_top = 192.0
 margin_right = 256.0
 margin_bottom = 288.0
 size_flags_vertical = 3
-color = Color( 0.862745, 0.705882, 0.901961, 1 )
+color = Color( 0.913725, 0.760784, 0.917647, 1 )
 script = ExtResource( 2 )
 nome = "Pacifist"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/ColorRect2"]
-margin_left = 104.0
-margin_top = 8.0
-margin_right = 248.0
-margin_bottom = 32.0
+margin_left = 96.0
+margin_top = 32.0
+margin_right = 240.0
+margin_bottom = 56.0
 text = "Pacifist"
 align = 1
 valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/ColorRect2"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 5 )
+expand = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 352.0
@@ -96,38 +119,58 @@ custom_constants/separation = 96
 margin_right = 256.0
 margin_bottom = 96.0
 size_flags_vertical = 3
-color = Color( 0.862745, 0.705882, 0.901961, 1 )
+color = Color( 0.913725, 0.760784, 0.917647, 1 )
 script = ExtResource( 2 )
 nome = "Merchant"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect"]
-margin_left = 104.0
-margin_top = 8.0
-margin_right = 248.0
-margin_bottom = 32.0
+margin_left = 96.0
+margin_top = 32.0
+margin_right = 240.0
+margin_bottom = 56.0
 text = "Merchant"
 align = 1
 valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/ColorRect"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 6 )
+expand = true
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
 margin_top = 192.0
 margin_right = 256.0
 margin_bottom = 288.0
 size_flags_vertical = 3
-color = Color( 0.862745, 0.705882, 0.901961, 1 )
+color = Color( 0.913725, 0.760784, 0.917647, 1 )
 script = ExtResource( 2 )
 nome = "Power of Friendship"
+hidden = true
+icon = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -40.0
-margin_top = 8.0
+margin_top = 32.0
 margin_right = 120.0
-margin_bottom = 43.0
+margin_bottom = 64.0
 text = "???"
 align = 1
 valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/ColorRect2"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 7 )
+expand = true
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 24.0
