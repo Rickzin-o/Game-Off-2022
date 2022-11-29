@@ -36,10 +36,9 @@ func _physics_process(delta):
 func die():
 	direction = 0
 	if not glob.room in glob.storage['levels']:
-		for i in range(1):
-			var coin = money.instance()
-			coin.position = global_position
-			get_tree().current_scene.add_child(coin)
+		var coin = money.instance()
+		coin.position = global_position
+		get_tree().current_scene.add_child(coin)
 	yield(get_tree().create_timer(0.2), "timeout")
 	queue_free()
 
