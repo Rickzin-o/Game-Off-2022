@@ -23,6 +23,7 @@ onready var animtree = $AnimationTree
 onready var camAnim = $Camera2D/Tween
 onready var doorsroom = load("res://Data/Scenes/Game/doorsroom.tscn")
 onready var ball = load("res://Data/Scenes/colorball.tscn")
+onready var jump_particles = load("res://Data/Scenes/Effects and Stuff/jumpparticles.tscn")
 
 func _ready():
 	if glob.playersave['save_pos']:
@@ -68,6 +69,7 @@ func _physics_process(delta):
 			jump_remember = 0
 			movement.y = -JUMP_FORCE
 			SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXJump.wav"))
+			set_jump_particles()
 		
 		set_collision_layer_bit(0, !dash.is_dashing())
 		if dash.is_dashing():
@@ -144,3 +146,8 @@ func attack():
 func finish_attack():
 	animtree.set('parameters/Action/current', 0)
 	attacking = false
+
+func set_jump_particles():
+	var particles = jump_particles.instance()
+	particles.position = global_position + Vector2(0, 24)
+	get_tree().current_scene.add_child(particles)

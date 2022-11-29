@@ -27,6 +27,7 @@ func end_level():
 	glob.emit_signal("end_level")
 	glob.savemoney = glob.storage['money']
 	glob.storage['dreams'] += glob.dreams
+	if glob.kills <= 0: glob.emit_signal("goal_reached", "Pacifist")
 	yield(get_tree().create_timer(1), "timeout")
 	glob.playersave['save_pos'] = true
 	get_tree().change_scene_to(doorsroom)

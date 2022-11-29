@@ -50,6 +50,7 @@ func set_movement_multiplier(multiplier: float): # Change Direction value to fit
 
 func die():
 	direction = 0
+	glob.kills += 1
 	if not glob.room in glob.storage['levels']:
 		for i in range(2):
 			var jewel = money.instance()

@@ -35,6 +35,7 @@ func _physics_process(delta):
 
 func die():
 	direction = 0
+	glob.kills += 1
 	if not glob.room in glob.storage['levels']:
 		var coin = money.instance()
 		coin.position = global_position

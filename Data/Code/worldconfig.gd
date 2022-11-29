@@ -4,6 +4,7 @@ export(String) var room = ''
 
 func _ready():
 	glob.room = room
+	glob.kills = 0
 	glob.savemoney = glob.storage['money']
 	glob.connect("end_level", self, "save_things")
 	glob.health = glob.maxHealth

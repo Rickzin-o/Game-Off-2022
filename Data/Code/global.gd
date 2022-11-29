@@ -17,6 +17,7 @@ var shopping := false
 
 var dreams := 0
 var totalDreams := 0
+var kills = 0
 var room = ''
 var savemoney = storage['money']
 

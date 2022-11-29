@@ -16,5 +16,7 @@ func set_achievement(achievement: String):
 	description.text = achievements[achievement]
 
 func appear_achievement(achievement: String):
-	set_achievement(achievement)
-	animplayer.play("achievement")
+	if achievement in achievements.keys() and not achievement in glob.achievements:
+		set_achievement(achievement)
+		glob.achievements.append(achievement)
+		animplayer.play("achievement")
