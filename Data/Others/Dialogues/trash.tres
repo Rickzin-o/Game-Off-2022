@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 6
+resource_version = 10
 syntax_version = 2
 raw_text = "~ trash_can
 
@@ -12,10 +12,15 @@ raw_text = "~ trash_can
  : [i]You found [color=green]$20[/color]![/i]
 
 ~ empty
- : [i]It's a empty trash can.[/i]"
+ : [i]It's a empty trash can.[/i]
+
+~ key_fragment
+ : [i]There's something shiny inside of the trash can...[/i]
+ : [i]You found [color=#f0a014]Key Fragment[/color]![/i]"
 errors = [  ]
 titles = {
 "empty": "6",
+"key_fragment": "9",
 "trash_can": "2"
 }
 lines = {
@@ -23,6 +28,15 @@ lines = {
 "next_id": "2",
 "text": "trash_can",
 "type": "title"
+},
+"10": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "[i]You found [color=#f0a014]Key Fragment[/color]![/i]",
+"translation_key": "[i]You found [color=#f0a014]Key Fragment[/color]![/i]",
+"type": "dialogue"
 },
 "2": {
 "character": "",
@@ -54,6 +68,20 @@ lines = {
 "replacements": [  ],
 "text": "[i]It's a empty trash can.[/i]",
 "translation_key": "[i]It's a empty trash can.[/i]",
+"type": "dialogue"
+},
+"8": {
+"next_id": "9",
+"text": "key_fragment",
+"type": "title"
+},
+"9": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "10",
+"replacements": [  ],
+"text": "[i]There's something shiny inside of the trash can...[/i]",
+"translation_key": "[i]There's something shiny inside of the trash can...[/i]",
 "type": "dialogue"
 }
 }

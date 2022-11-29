@@ -18,6 +18,7 @@ onready var money = load("res://Data/Scenes/coin.tscn")
 
 func _ready():
 	raycast.position.x = $CollisionShape2D.shape.get_extents().x * direction
+	$SeePlayer.scale.x *= direction
 	if direction == -1: $Sprite.set_flip_h(true)
 
 func _physics_process(delta):

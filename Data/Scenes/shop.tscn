@@ -142,8 +142,9 @@ valign = 1
 [node name="Description" type="Label" parent="InfoRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.0
 margin_top = 32.0
-margin_right = -32.0
+margin_right = -64.0
 theme = ExtResource( 4 )
 text = " something something"
 autowrap = true

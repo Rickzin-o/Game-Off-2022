@@ -56,10 +56,12 @@ room = "level2"
 [node name="End" parent="." instance=ExtResource( 4 )]
 position = Vector2( 608, -416 )
 
-[node name="Trash" parent="." instance=ExtResource( 11 )]
+[node name="Interaction" type="Node2D" parent="."]
+
+[node name="Trash" parent="Interaction" instance=ExtResource( 11 )]
 position = Vector2( 6544, -256 )
 
-[node name="Sign" parent="." instance=ExtResource( 9 )]
+[node name="Sign" parent="Interaction" instance=ExtResource( 9 )]
 position = Vector2( 2176, 416 )
 value = 3
 
