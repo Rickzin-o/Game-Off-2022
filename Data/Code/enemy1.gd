@@ -11,6 +11,7 @@ var movimento = Vector2()
 onready var raycast = $RayCast2D
 onready var anim = $Animation
 onready var money = load("res://Data/Scenes/coin.tscn")
+onready var deathparticles = load("res://Data/Scenes/Effects and Stuff/explosionparticles.tscn")
 
 
 func _ready():
@@ -32,6 +33,11 @@ func _physics_process(delta):
 	recoil = move_and_slide(recoil, Vector2.UP)
 	movimento = move_and_slide(movimento, Vector2.UP)
 
+func set_death_particles():
+	var particles: CPUParticles2D = deathparticles.instance()
+	particles.color = Color("78f03c")
+	particles.position = global_position
+	get_tree().current_scene.add_child(particles)
 
 func die():
 	direction = 0
@@ -41,6 +47,7 @@ func die():
 		coin.position = global_position
 		get_tree().current_scene.add_child(coin)
 	yield(get_tree().create_timer(0.2), "timeout")
+	set_death_particles()
 	queue_free()
 
 
@@ -55,9 +62,11 @@ func _on_Hurtbox_area_entered(area):
 		var collision_point = sign(global_position.x - ball.global_position.x)
 		recoil = Vector2(collision_point * 50, 0)
 		ball.disappear()
-	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
+	if health > 0:
+		SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
 	health -= glob.damage
 	anim.play("hit")
 	if health <= 0:
+		SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXExplosion2.wav"))
 		$Hurtbox.set_collision_mask_bit(5, false)
 		die()

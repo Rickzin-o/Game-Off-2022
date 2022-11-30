@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const VELOCITY = 100
-const RAGE_VELOCITY = 160
+const RAGE_VELOCITY = 180
 const DAMAGE = 20
 
 export(int, -1, 1, 2) var direction = 1
@@ -16,6 +16,7 @@ onready var checkmap = $SeePlayer/RayCast2D
 onready var anim = $Animation
 onready var money = load("res://Data/Scenes/coin.tscn")
 onready var particles = load("res://Data/Scenes/Effects and Stuff/hitparticles.tscn")
+onready var deathparticles = load("res://Data/Scenes/Effects and Stuff/explosionparticles.tscn")
 
 func _ready():
 	raycast.position.x = $CollisionShape2D.shape.get_extents().x * direction
@@ -51,10 +52,17 @@ func change_direction():
 func set_movement_multiplier(multiplier: float):
 	direction *= multiplier
 
-func set_particles(direc):
+func set_hit_particles(direc):
 	var hitparticles: CPUParticles2D = particles.instance()
 	hitparticles.direction.x = direc
-	add_child(hitparticles)
+	hitparticles.position = global_position
+	get_tree().current_scene.add_child(hitparticles)
+
+func set_death_particles():
+	var particles: CPUParticles2D = deathparticles.instance()
+	particles.position = global_position
+	particles.color = Color("500a0a")
+	get_tree().current_scene.add_child(particles)
 
 func die():
 	direction = 0
@@ -65,6 +73,7 @@ func die():
 			jewel.position = global_position
 			get_tree().current_scene.add_child(jewel)
 	yield(get_tree().create_timer(0.2), "timeout")
+	set_death_particles()
 	queue_free()
 
 
@@ -79,12 +88,14 @@ func _on_Hurtbox_area_entered(area):
 	if ball is ColorfulBall:
 		var collision_point = sign(global_position.x - ball.global_position.x)
 		recoil = Vector2(collision_point * 30, 0)
-		set_particles(collision_point)
+		set_hit_particles(collision_point)
 		ball.disappear()
-	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
+	if health > 0:
+		SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
 	health -= glob.damage
 	anim.play("hit")
 	if health <= 0:
+		SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXExplosion2.wav"))
 		$Hurtbox.set_collision_mask_bit(5, false)
 		die()
 

@@ -8,6 +8,9 @@ func _input(event):
 		if playerinside:
 			$AnimationPlayer.play("explode")
 
+func play_sound():
+	var sound = SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXExplosion.wav"))
+	sound.pitch_scale = 1.1
 
 func _on_Area2D_body_entered(body):
 	playerinside = true
