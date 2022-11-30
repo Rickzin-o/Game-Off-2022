@@ -4,14 +4,22 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 21
+resource_version = 36
 syntax_version = 2
 raw_text = "~ buy_or_talk
 
 - Buy something
 	do emit(\"shop\")
 - Talk
-	Shopkeeper: [[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]"
+	if count_item(\"key_fragment\") == 2
+		Shopkeeper: Hey, you have two key fragments, right?
+		Shopkeeper: If you give it to me, i'll give you a [color=#c89614]Golden Key[/color]!
+		Shopkeeper: And i'll need [color=green]$1000[/color] too[wait=0.5].[wait=0.5].[wait=0.5].
+		Shopkeeper: Just kidding! Here we are.
+		do give_key()
+		 : [i]You received [color=#c89614]Golden Key[/color]![/i]
+	else
+		Shopkeeper: [[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]"
 errors = [  ]
 titles = {
 "buy_or_talk": "2"
@@ -21,6 +29,45 @@ lines = {
 "next_id": "2",
 "text": "buy_or_talk",
 "type": "title"
+},
+"10": {
+"mutation": {
+"expression": [ {
+"function": "give_key",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "11",
+"parent_id": "5",
+"type": "mutation"
+},
+"11": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "5",
+"replacements": [  ],
+"text": "[i]You received [color=#c89614]Golden Key[/color]![/i]",
+"translation_key": "[i]You received [color=#c89614]Golden Key[/color]![/i]",
+"type": "dialogue"
+},
+"12": {
+"next_conditional_id": "end!",
+"next_id": "13",
+"next_id_after": "end!",
+"parent_id": "4",
+"type": "condition"
+},
+"13": {
+"character": "Shopkeeper",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "12",
+"replacements": [  ],
+"text": "[[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]",
+"translation_key": "[[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]",
+"type": "dialogue"
 },
 "2": {
 "next_id": "3",
@@ -55,13 +102,66 @@ lines = {
 "type": "response"
 },
 "5": {
+"condition": {
+"expression": [ {
+"function": "count_item",
+"type": "function",
+"value": [ [ {
+"type": "string",
+"value": "key_fragment"
+} ] ]
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 2
+} ]
+},
+"next_conditional_id": "12",
+"next_id": "6",
+"next_id_after": "end!",
+"parent_id": "4",
+"type": "condition"
+},
+"6": {
 "character": "Shopkeeper",
 "character_replacements": [  ],
-"next_id": "end!",
-"parent_id": "4",
+"next_id": "7",
+"parent_id": "5",
 "replacements": [  ],
-"text": "[[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]",
-"translation_key": "[[If you give me jewels, i'll give you items. The more, the merrier!|It's a beautiful day outside.]]",
+"text": "Hey, you have two key fragments, right?",
+"translation_key": "Hey, you have two key fragments, right?",
+"type": "dialogue"
+},
+"7": {
+"character": "Shopkeeper",
+"character_replacements": [  ],
+"next_id": "8",
+"parent_id": "5",
+"replacements": [  ],
+"text": "If you give it to me, i'll give you a [color=#c89614]Golden Key[/color]!",
+"translation_key": "If you give it to me, i'll give you a [color=#c89614]Golden Key[/color]!",
+"type": "dialogue"
+},
+"8": {
+"character": "Shopkeeper",
+"character_replacements": [  ],
+"next_id": "9",
+"parent_id": "5",
+"replacements": [  ],
+"text": "And i'll need [color=green]$1000[/color] too[wait=0.5].[wait=0.5].[wait=0.5].",
+"translation_key": "And i'll need [color=green]$1000[/color] too[wait=0.5].[wait=0.5].[wait=0.5].",
+"type": "dialogue"
+},
+"9": {
+"character": "Shopkeeper",
+"character_replacements": [  ],
+"next_id": "10",
+"parent_id": "5",
+"replacements": [  ],
+"text": "Just kidding! Here we are.",
+"translation_key": "Just kidding! Here we are.",
 "type": "dialogue"
 }
 }

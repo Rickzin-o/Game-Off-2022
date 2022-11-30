@@ -25,9 +25,9 @@ func _physics_process(delta):
 		$Sprite.flip_h = not $Sprite.flip_h
 		raycast.position.x = $CollisionShape2D.shape.get_extents().x * direction
 	
-	movimento.x = VELOCITY * direction
+	movimento.x = VELOCITY * direction * (delta*60)
 	
-	recoil = recoil.move_toward(Vector2.ZERO, delta * 60)
+	recoil = recoil.move_toward(Vector2.ZERO, delta * 200)
 	
 	recoil = move_and_slide(recoil, Vector2.UP)
 	movimento = move_and_slide(movimento, Vector2.UP)
@@ -53,7 +53,7 @@ func _on_Hurtbox_area_entered(area):
 	var ball = area.get_parent()
 	if ball is ColorfulBall:
 		var collision_point = sign(global_position.x - ball.global_position.x)
-		recoil = Vector2(collision_point * 30, 0)
+		recoil = Vector2(collision_point * 50, 0)
 		ball.disappear()
 	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
 	health -= glob.damage

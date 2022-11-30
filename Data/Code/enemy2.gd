@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const VELOCITY = 100
-const RAGE_VELOCITY = 140
+const RAGE_VELOCITY = 160
 const DAMAGE = 20
 
 export(int, -1, 1, 2) var direction = 1
@@ -15,6 +15,7 @@ onready var raycast = $RayCast2D
 onready var checkmap = $SeePlayer/RayCast2D
 onready var anim = $Animation
 onready var money = load("res://Data/Scenes/coin.tscn")
+onready var particles = load("res://Data/Scenes/Effects and Stuff/hitparticles.tscn")
 
 func _ready():
 	raycast.position.x = $CollisionShape2D.shape.get_extents().x * direction
@@ -35,7 +36,8 @@ func _physics_process(delta):
 		$Sprite.animation = 'default'
 		movement.x = VELOCITY * direction
 	
-	recoil = recoil.move_toward(Vector2.ZERO, delta * 60)
+	movement.x *= (delta*60)
+	recoil = recoil.move_toward(Vector2.ZERO, delta * 100)
 	
 	recoil = move_and_slide(recoil, Vector2.UP)
 	movement = move_and_slide(movement, Vector2.UP)
@@ -46,8 +48,13 @@ func change_direction():
 	raycast.position.x = $CollisionShape2D.shape.get_extents().x * direction
 	$Sprite.flip_h = not $Sprite.flip_h
 
-func set_movement_multiplier(multiplier: float): # Change Direction value to fit certain velocity
+func set_movement_multiplier(multiplier: float):
 	direction *= multiplier
+
+func set_particles(direc):
+	var hitparticles: CPUParticles2D = particles.instance()
+	hitparticles.direction.x = direc
+	add_child(hitparticles)
 
 func die():
 	direction = 0
@@ -72,6 +79,7 @@ func _on_Hurtbox_area_entered(area):
 	if ball is ColorfulBall:
 		var collision_point = sign(global_position.x - ball.global_position.x)
 		recoil = Vector2(collision_point * 30, 0)
+		set_particles(collision_point)
 		ball.disappear()
 	SoundManager.play_sound(load("res://Data/Sounds/SFX/SFXHit.wav"))
 	health -= glob.damage

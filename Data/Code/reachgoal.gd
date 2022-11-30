@@ -1,7 +1,7 @@
 extends Control
 
 var achievements = {"Collector": 'Collect all dreams', "Pacifist": "Complete a level without killing a monster",
-"Merchant": "Buy everything from the shop", "Power of Friendship": "Friends"}
+"Merchant": "Buy an item from the shop", "Power of Friendship": "Make B1B0T happy"}
 
 onready var labelname = $ColorRect/Name
 onready var description = $ColorRect/Description

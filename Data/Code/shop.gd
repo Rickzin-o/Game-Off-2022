@@ -19,6 +19,7 @@ func _ready():
 
 
 func _input(event):
+	# ONLY GOD AND I KNOW WHAT I DID HERE
 	if Input.is_action_just_pressed("ui_right"):
 		index.x = int(index.x+1) % 3
 		if not index_exist(index):
@@ -41,6 +42,7 @@ func _input(event):
 			index.y -= 1
 	reference_positionx((index.x+1) * 96)
 	reference_positiony(index.y * 128 + 96)
+	# :sob:
 	
 	var item = rect.get_child(index.x + index.y*3)
 	var item_info = get_item_info(item)
@@ -94,11 +96,13 @@ func set_item_info(info):
 	info_rect.get_node("Description").text = ' ' + info['description']
 
 
-func item_sold(item: ShopItem):
-	if not item.item_name in glob.items: glob.items.append(item.item_name)
+func item_sold(item: ShopItem): # Set item as Sold and save it in glob.items
+	glob.items.append(item.item_name)
 	item.item_name = 'Sold'
 	item.description = ''
 	item.price = 0
+	
+	if not "Merchant" in glob.achievements: glob.emit_signal("goal_reached", "Merchant")
 
 func item_effect(item: ShopItem): # Set changes when player buy item
 	if item.effect['Health'] > 0:
@@ -108,7 +112,7 @@ func item_effect(item: ShopItem): # Set changes when player buy item
 	
 	if item.effect['Item'] == 'Boots':
 		glob.speedboots = 35
-	if item.effect['Item'] == 'Key Fragment':
+	if item.effect['Item'] == 'KeyFrag':
 		glob.items.append('key_fragment')
 
 func set_visibility(value: bool, set_var: bool = false): # Set Visible and Input Process as Value

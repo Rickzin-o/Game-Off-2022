@@ -81,19 +81,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 20, 20, 20, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 24, 24, 24, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 19.0
-height = 8.0
+height = 5.0
 
 [sub_resource type="CapsuleShape2D" id=18]
 radius = 20.0
-height = 9.0
+height = 6.0
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 118.5, 24 )
+extents = Vector2( 122.5, 24 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 96, 32 )
@@ -222,7 +222,7 @@ shape = SubResource( 18 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SeePlayer/Front View"]
-position = Vector2( 137.5, 0 )
+position = Vector2( 141.5, 0 )
 shape = SubResource( 19 )
 
 [node name="Back View" type="Area2D" parent="SeePlayer"]

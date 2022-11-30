@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Data/Code/particles.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=23]
+colors = PoolColorArray( 1, 1, 1, 1, 0.784314, 0.784314, 0.784314, 0.196078 )
+
+[node name="Hit Particles" type="CPUParticles2D"]
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.1
+local_coords = false
+gravity = Vector2( 0, 10 )
+initial_velocity = 60.0
+initial_velocity_random = 0.5
+angular_velocity = 20.0
+angular_velocity_random = 0.5
+damping = 20.0
+scale_amount = 8.0
+scale_amount_random = 0.5
+color = Color( 0.141176, 0.0392157, 0.0392157, 1 )
+color_ramp = SubResource( 23 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

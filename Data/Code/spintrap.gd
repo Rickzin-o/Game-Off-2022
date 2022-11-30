@@ -10,4 +10,4 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if body is Player:
 		if not body.intangible:
-			body.take_damage(3, 15)
+			body.take_damage(4, 20)

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 15
+resource_version = 19
 syntax_version = 2
 raw_text = "~ sign1
 
@@ -17,12 +17,16 @@ raw_text = "~ sign1
 ~ sign3
  : \"Did you know that when using a [color=blue]Dash[/color] you can pass through enemies?\"
  : \"Yeah[wait=0.5], i didn't know too.\"
- : [i]The design of this game seems really poor.[/i]"
+ : [i]The design of this game seems really poor.[/i]
+
+~ sign4
+ : \"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\""
 errors = [  ]
 titles = {
 "sign1": "2",
 "sign2": "5",
-"sign3": "9"
+"sign3": "9",
+"sign4": "14"
 }
 lines = {
 "0": {
@@ -46,6 +50,20 @@ lines = {
 "replacements": [  ],
 "text": "[i]The design of this game seems really poor.[/i]",
 "translation_key": "[i]The design of this game seems really poor.[/i]",
+"type": "dialogue"
+},
+"13": {
+"next_id": "14",
+"text": "sign4",
+"type": "title"
+},
+"14": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "\"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\"",
+"translation_key": "\"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\"",
 "type": "dialogue"
 },
 "2": {

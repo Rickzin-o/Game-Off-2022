@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Data/Code/npc.gd" type="Script" id=1]
 [ext_resource path="res://Data/Images/Entities/NPCs.png" type="Texture" id=2]
@@ -19,6 +19,14 @@ region = Rect2( 0, 16, 16, 16 )
 atlas = ExtResource( 2 )
 region = Rect2( 16, 16, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 32, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ) ],
@@ -29,6 +37,11 @@ animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "2",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "3",
 "speed": 2.0
 } ]
 

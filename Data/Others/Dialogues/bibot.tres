@@ -1,0 +1,204 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 6
+syntax_version = 2
+raw_text = "~ meet_bibot
+
+if check_level_completed(\"bibot\") == false
+	if has_met_bibot == false
+		B1B0T: My name is B1B0T.
+		B1B0T: The door right there is B1B0T's dream world.
+		B1B0T: But B1B0T lost the key to open door.
+		B1B0T: B1B0T sad.
+		set has_met_bibot = true
+	else
+		B1B0T: B1B0T lost the key to open door.
+		B1B0T: B1B0T sad.
+else
+	B1B0T: You saved B1B0T's world
+	B1B0T: B1B0T happy.
+	do emit_signal(\"goal_reached\", \"Power of Friendship\")"
+errors = [  ]
+titles = {
+"meet_bibot": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "meet_bibot",
+"type": "title"
+},
+"10": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "11",
+"parent_id": "9",
+"replacements": [  ],
+"text": "B1B0T lost the key to open door.",
+"translation_key": "B1B0T lost the key to open door.",
+"type": "dialogue"
+},
+"11": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "end!",
+"parent_id": "9",
+"replacements": [  ],
+"text": "B1B0T sad.",
+"translation_key": "B1B0T sad.",
+"type": "dialogue"
+},
+"12": {
+"next_conditional_id": "end!",
+"next_id": "13",
+"next_id_after": "end!",
+"type": "condition"
+},
+"13": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "14",
+"parent_id": "12",
+"replacements": [  ],
+"text": "You saved B1B0T's world",
+"translation_key": "You saved B1B0T's world",
+"type": "dialogue"
+},
+"14": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "15",
+"parent_id": "12",
+"replacements": [  ],
+"text": "B1B0T happy.",
+"translation_key": "B1B0T happy.",
+"type": "dialogue"
+},
+"15": {
+"mutation": {
+"expression": [ {
+"function": "emit_signal",
+"type": "function",
+"value": [ [ {
+"type": "string",
+"value": "goal_reached"
+} ], [ {
+"type": "string",
+"value": "Power of Friendship"
+} ] ]
+} ]
+},
+"next_id": "end!",
+"parent_id": "12",
+"type": "mutation"
+},
+"2": {
+"condition": {
+"expression": [ {
+"function": "check_level_completed",
+"type": "function",
+"value": [ [ {
+"type": "string",
+"value": "bibot"
+} ] ]
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_conditional_id": "12",
+"next_id": "3",
+"next_id_after": "end!",
+"type": "condition"
+},
+"3": {
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "has_met_bibot"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_conditional_id": "9",
+"next_id": "4",
+"next_id_after": "end!",
+"parent_id": "2",
+"type": "condition"
+},
+"4": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "5",
+"parent_id": "3",
+"replacements": [  ],
+"text": "My name is B1B0T.",
+"translation_key": "My name is B1B0T.",
+"type": "dialogue"
+},
+"5": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "6",
+"parent_id": "3",
+"replacements": [  ],
+"text": "The door right there is B1B0T's dream world.",
+"translation_key": "The door right there is B1B0T's dream world.",
+"type": "dialogue"
+},
+"6": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "7",
+"parent_id": "3",
+"replacements": [  ],
+"text": "But B1B0T lost the key to open door.",
+"translation_key": "But B1B0T lost the key to open door.",
+"type": "dialogue"
+},
+"7": {
+"character": "B1B0T",
+"character_replacements": [  ],
+"next_id": "8",
+"parent_id": "3",
+"replacements": [  ],
+"text": "B1B0T sad.",
+"translation_key": "B1B0T sad.",
+"type": "dialogue"
+},
+"8": {
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "has_met_bibot"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_id": "end!",
+"parent_id": "3",
+"type": "mutation"
+},
+"9": {
+"next_conditional_id": "end!",
+"next_id": "10",
+"next_id_after": "end!",
+"parent_id": "2",
+"type": "condition"
+}
+}

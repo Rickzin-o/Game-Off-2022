@@ -4,86 +4,102 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 46
+resource_version = 50
 syntax_version = 2
 raw_text = "~ presentation
-
 Guard: Oh, hello!
-Guard: You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?
-Guard: Good to know you're awake, we need your help.
-- Who are you? => who_am_i
-- What? => explain
-- Uh... Bye
-	Guard: Bye bye.
-
-~ explain
-Guard: You're the [color=purple]Dreamer[/color]. You woke up to collect [color=#c828be]dreams[/color].
-Guard: That's how things work.
+if has_met_guard == false
+	Guard: You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?
+	Guard: Good to know you're awake, we need your help.
+	set has_met_guard = true
+	- Who are you? => who_am_i
+	- Uh... Bye
+		Guard: Bye bye.
+else
+	Guard: Wassup
+	- Explain me everything again => who_am_i
+	- Bye
+		Guard: Bye bye.
 
 ~ who_am_i
 Guard: I'm the Guard, i'm protecting these doors.
 Guard: But we've got problems... So we need your help.
-Guard: [shake rate=20 level=10][color=red]Nightmare[/color][/shake] was seen recently.
+Guard: [shake rate=20 level=10][color=red]Nightmares[/color][/shake] were seen recently.
 Guard: They're not a big deal, but you need to protect the [color=#c828be]dreams[/color] to make sure we won't get in trouble.
 - Ok. => END
 - Cool.
 	Guard: Really cool."
 errors = [  ]
 titles = {
-"explain": "11",
-"presentation": "2",
-"who_am_i": "15"
+"presentation": "1",
+"who_am_i": "16"
 }
 lines = {
 "0": {
-"next_id": "2",
+"next_id": "1",
 "text": "presentation",
 "type": "title"
 },
+"1": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "2",
+"replacements": [  ],
+"text": "Oh, hello!",
+"translation_key": "Oh, hello!",
+"type": "dialogue"
+},
 "10": {
+"character": "Guard",
+"character_replacements": [  ],
 "next_id": "11",
-"text": "explain",
-"type": "title"
+"parent_id": "9",
+"replacements": [  ],
+"text": "Wassup",
+"translation_key": "Wassup",
+"type": "dialogue"
 },
 "11": {
-"character": "Guard",
-"character_replacements": [  ],
-"next_id": "12",
+"next_id": "16",
+"next_id_after": "end!",
+"parent_id": "9",
 "replacements": [  ],
-"text": "You're the [color=purple]Dreamer[/color]. You woke up to collect [color=#c828be]dreams[/color].",
-"translation_key": "You're the [color=purple]Dreamer[/color]. You woke up to collect [color=#c828be]dreams[/color].",
-"type": "dialogue"
+"responses": PoolStringArray( "11", "12" ),
+"text": "Explain me everything again",
+"translation_key": "Explain me everything again",
+"type": "response"
 },
 "12": {
+"next_id": "13",
+"next_id_after": "end!",
+"parent_id": "9",
+"replacements": [  ],
+"text": "Bye",
+"translation_key": "Bye",
+"type": "response"
+},
+"13": {
 "character": "Guard",
 "character_replacements": [  ],
-"next_id": "",
+"next_id": "end!",
+"parent_id": "12",
 "replacements": [  ],
-"text": "That's how things work.",
-"translation_key": "That's how things work.",
+"text": "Bye bye.",
+"translation_key": "Bye bye.",
 "type": "dialogue"
-},
-"14": {
-"next_id": "15",
-"text": "who_am_i",
-"type": "title"
 },
 "15": {
-"character": "Guard",
-"character_replacements": [  ],
 "next_id": "16",
-"replacements": [  ],
-"text": "I'm the Guard, i'm protecting these doors.",
-"translation_key": "I'm the Guard, i'm protecting these doors.",
-"type": "dialogue"
+"text": "who_am_i",
+"type": "title"
 },
 "16": {
 "character": "Guard",
 "character_replacements": [  ],
 "next_id": "17",
 "replacements": [  ],
-"text": "But we've got problems... So we need your help.",
-"translation_key": "But we've got problems... So we need your help.",
+"text": "I'm the Guard, i'm protecting these doors.",
+"translation_key": "I'm the Guard, i'm protecting these doors.",
 "type": "dialogue"
 },
 "17": {
@@ -91,8 +107,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "18",
 "replacements": [  ],
-"text": "[shake rate=20 level=10][color=red]Nightmare[/color][/shake] was seen recently.",
-"translation_key": "[shake rate=20 level=10][color=red]Nightmare[/color][/shake] was seen recently.",
+"text": "But we've got problems... So we need your help.",
+"translation_key": "But we've got problems... So we need your help.",
 "type": "dialogue"
 },
 "18": {
@@ -100,41 +116,59 @@ lines = {
 "character_replacements": [  ],
 "next_id": "19",
 "replacements": [  ],
+"text": "[shake rate=20 level=10][color=red]Nightmares[/color][/shake] were seen recently.",
+"translation_key": "[shake rate=20 level=10][color=red]Nightmares[/color][/shake] were seen recently.",
+"type": "dialogue"
+},
+"19": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "20",
+"replacements": [  ],
 "text": "They're not a big deal, but you need to protect the [color=#c828be]dreams[/color] to make sure we won't get in trouble.",
 "translation_key": "They're not a big deal, but you need to protect the [color=#c828be]dreams[/color] to make sure we won't get in trouble.",
 "type": "dialogue"
 },
-"19": {
+"2": {
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "has_met_guard"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_conditional_id": "9",
+"next_id": "3",
+"next_id_after": "end!",
+"type": "condition"
+},
+"20": {
 "next_id": "end",
 "next_id_after": "end!",
 "replacements": [  ],
-"responses": PoolStringArray( "19", "20" ),
+"responses": PoolStringArray( "20", "21" ),
 "text": "Ok.",
 "translation_key": "Ok.",
 "type": "response"
 },
-"2": {
-"character": "Guard",
-"character_replacements": [  ],
-"next_id": "3",
-"replacements": [  ],
-"text": "Oh, hello!",
-"translation_key": "Oh, hello!",
-"type": "dialogue"
-},
-"20": {
-"next_id": "21",
+"21": {
+"next_id": "22",
 "next_id_after": "end!",
 "replacements": [  ],
 "text": "Cool.",
 "translation_key": "Cool.",
 "type": "response"
 },
-"21": {
+"22": {
 "character": "Guard",
 "character_replacements": [  ],
 "next_id": "end!",
-"parent_id": "20",
+"parent_id": "21",
 "replacements": [  ],
 "text": "Really cool.",
 "translation_key": "Really cool.",
@@ -144,6 +178,7 @@ lines = {
 "character": "Guard",
 "character_replacements": [  ],
 "next_id": "4",
+"parent_id": "2",
 "replacements": [  ],
 "text": "You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?",
 "translation_key": "You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?",
@@ -153,31 +188,43 @@ lines = {
 "character": "Guard",
 "character_replacements": [  ],
 "next_id": "5",
+"parent_id": "2",
 "replacements": [  ],
 "text": "Good to know you're awake, we need your help.",
 "translation_key": "Good to know you're awake, we need your help.",
 "type": "dialogue"
 },
 "5": {
-"next_id": "15",
-"next_id_after": "end!",
-"replacements": [  ],
-"responses": PoolStringArray( "5", "6", "7" ),
-"text": "Who are you?",
-"translation_key": "Who are you?",
-"type": "response"
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "has_met_guard"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_id": "6",
+"parent_id": "2",
+"type": "mutation"
 },
 "6": {
-"next_id": "11",
+"next_id": "16",
 "next_id_after": "end!",
+"parent_id": "2",
 "replacements": [  ],
-"text": "What?",
-"translation_key": "What?",
+"responses": PoolStringArray( "6", "7" ),
+"text": "Who are you?",
+"translation_key": "Who are you?",
 "type": "response"
 },
 "7": {
 "next_id": "8",
 "next_id_after": "end!",
+"parent_id": "2",
 "replacements": [  ],
 "text": "Uh... Bye",
 "translation_key": "Uh... Bye",
@@ -192,5 +239,11 @@ lines = {
 "text": "Bye bye.",
 "translation_key": "Bye bye.",
 "type": "dialogue"
+},
+"9": {
+"next_conditional_id": "end!",
+"next_id": "10",
+"next_id_after": "end!",
+"type": "condition"
 }
 }

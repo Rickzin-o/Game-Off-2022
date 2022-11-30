@@ -13,6 +13,7 @@ func _ready():
 		DialogueManager.connect("dialogue_finished", glob, "finish_dialogue")
 
 func _process(delta):
+	# Changes the direction NPC is facing
 	if player != null and player is Player:
 		var playerdirection = sign(player.position.x - global_position.x)
 		playerdirection = true if playerdirection == -1 else false
