@@ -24,7 +24,7 @@ margin_left = -576.0
 margin_top = -320.0
 margin_right = 576.0
 margin_bottom = 320.0
-color = Color( 0.6, 0.901961, 0.784314, 1 )
+color = Color( 0.588235, 0.901961, 0.784314, 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
