@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 6
+resource_version = 7
 syntax_version = 2
 raw_text = "~ meet_bibot
 
@@ -19,7 +19,7 @@ if check_level_completed(\"bibot\") == false
 		B1B0T: B1B0T lost the key to open door.
 		B1B0T: B1B0T sad.
 else
-	B1B0T: You saved B1B0T's world
+	B1B0T: You saved B1B0T's world.
 	B1B0T: B1B0T happy.
 	do emit_signal(\"goal_reached\", \"Power of Friendship\")"
 errors = [  ]
@@ -64,8 +64,8 @@ lines = {
 "next_id": "14",
 "parent_id": "12",
 "replacements": [  ],
-"text": "You saved B1B0T's world",
-"translation_key": "You saved B1B0T's world",
+"text": "You saved B1B0T's world.",
+"translation_key": "You saved B1B0T's world.",
 "type": "dialogue"
 },
 "14": {

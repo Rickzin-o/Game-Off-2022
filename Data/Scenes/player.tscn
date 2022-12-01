@@ -283,7 +283,7 @@ nodes/Walk/position = Vector2( -426.667, -426.667 )
 nodes/WalkSpeed/node = SubResource( 19 )
 nodes/WalkSpeed/position = Vector2( -256, -426.667 )
 nodes/output/position = Vector2( 768, 85.3333 )
-node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling" ]
+node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 22
@@ -348,4 +348,9 @@ parameters/WalkSpeed/scale = 1.0
 
 [node name="Dash" parent="." instance=ExtResource( 4 )]
 
+[node name="Footstep" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Footstep" to="." method="_on_Footstep_timeout"]

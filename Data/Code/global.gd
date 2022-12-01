@@ -33,11 +33,14 @@ func _ready():
 	AudioServer.add_bus(1)
 	AudioServer.set_bus_name(1, "Sound")
 
+
 func money_reset():
 	storage['money'] = savemoney
 
+
 func finish_dialogue():
 	talking = false if not shopping else true
+
 
 func give_key():
 	for i in range(2):
@@ -45,8 +48,22 @@ func give_key():
 			items.erase("key_fragment")
 	items.append("secretkey")
 
+
 func count_item(item: String):
 	return items.count(item)
 
+
 func check_level_completed(level: String): # Check if a level is completed
 	return level in storage['levels']
+
+
+func save_game():
+	pass
+
+
+func load_game():
+	pass
+
+
+func reset_game():
+	pass

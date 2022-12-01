@@ -4,26 +4,26 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 50
+resource_version = 53
 syntax_version = 2
 raw_text = "~ presentation
-Guard: Oh, hello!
 if has_met_guard == false
+	Guard: Oh, hello!
 	Guard: You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?
-	Guard: Good to know you're awake, we need your help.
 	set has_met_guard = true
+	Guard: Good to know you're awake, we need your help.
 	- Who are you? => who_am_i
 	- Uh... Bye
 		Guard: Bye bye.
 else
-	Guard: Wassup
+	Guard: Wassup?
 	- Explain me everything again => who_am_i
 	- Bye
 		Guard: Bye bye.
 
 ~ who_am_i
 Guard: I'm the Guard, i'm protecting these doors.
-Guard: But we've got problems... So we need your help.
+Guard: But we got some problems... So we need your help.
 Guard: [shake rate=20 level=10][color=red]Nightmares[/color][/shake] were seen recently.
 Guard: They're not a big deal, but you need to protect the [color=#c828be]dreams[/color] to make sure we won't get in trouble.
 - Ok. => END
@@ -41,13 +41,22 @@ lines = {
 "type": "title"
 },
 "1": {
-"character": "Guard",
-"character_replacements": [  ],
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "has_met_guard"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_conditional_id": "9",
 "next_id": "2",
-"replacements": [  ],
-"text": "Oh, hello!",
-"translation_key": "Oh, hello!",
-"type": "dialogue"
+"next_id_after": "end!",
+"type": "condition"
 },
 "10": {
 "character": "Guard",
@@ -55,8 +64,8 @@ lines = {
 "next_id": "11",
 "parent_id": "9",
 "replacements": [  ],
-"text": "Wassup",
-"translation_key": "Wassup",
+"text": "Wassup?",
+"translation_key": "Wassup?",
 "type": "dialogue"
 },
 "11": {
@@ -107,8 +116,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "18",
 "replacements": [  ],
-"text": "But we've got problems... So we need your help.",
-"translation_key": "But we've got problems... So we need your help.",
+"text": "But we got some problems... So we need your help.",
+"translation_key": "But we got some problems... So we need your help.",
 "type": "dialogue"
 },
 "18": {
@@ -130,22 +139,14 @@ lines = {
 "type": "dialogue"
 },
 "2": {
-"condition": {
-"expression": [ {
-"type": "variable",
-"value": "has_met_guard"
-}, {
-"type": "comparison",
-"value": "=="
-}, {
-"type": "bool",
-"value": false
-} ]
-},
-"next_conditional_id": "9",
+"character": "Guard",
+"character_replacements": [  ],
 "next_id": "3",
-"next_id_after": "end!",
-"type": "condition"
+"parent_id": "1",
+"replacements": [  ],
+"text": "Oh, hello!",
+"translation_key": "Oh, hello!",
+"type": "dialogue"
 },
 "20": {
 "next_id": "end",
@@ -178,23 +179,13 @@ lines = {
 "character": "Guard",
 "character_replacements": [  ],
 "next_id": "4",
-"parent_id": "2",
+"parent_id": "1",
 "replacements": [  ],
 "text": "You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?",
 "translation_key": "You're the [wave amp=25 freq=5][color=purple]Dreamer[/color][/wave], right?",
 "type": "dialogue"
 },
 "4": {
-"character": "Guard",
-"character_replacements": [  ],
-"next_id": "5",
-"parent_id": "2",
-"replacements": [  ],
-"text": "Good to know you're awake, we need your help.",
-"translation_key": "Good to know you're awake, we need your help.",
-"type": "dialogue"
-},
-"5": {
 "mutation": {
 "expression": [ {
 "type": "variable",
@@ -207,14 +198,24 @@ lines = {
 "value": true
 } ]
 },
-"next_id": "6",
-"parent_id": "2",
+"next_id": "5",
+"parent_id": "1",
 "type": "mutation"
+},
+"5": {
+"character": "Guard",
+"character_replacements": [  ],
+"next_id": "6",
+"parent_id": "1",
+"replacements": [  ],
+"text": "Good to know you're awake, we need your help.",
+"translation_key": "Good to know you're awake, we need your help.",
+"type": "dialogue"
 },
 "6": {
 "next_id": "16",
 "next_id_after": "end!",
-"parent_id": "2",
+"parent_id": "1",
 "replacements": [  ],
 "responses": PoolStringArray( "6", "7" ),
 "text": "Who are you?",
@@ -224,7 +225,7 @@ lines = {
 "7": {
 "next_id": "8",
 "next_id_after": "end!",
-"parent_id": "2",
+"parent_id": "1",
 "replacements": [  ],
 "text": "Uh... Bye",
 "translation_key": "Uh... Bye",

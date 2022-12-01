@@ -43,10 +43,12 @@ func _physics_process(delta):
 			friction = false
 			movement.x = min(movement.x + ACCELERATION, MAX_SPEED + glob.speedboots)
 			$Playersheet.flip_h = false
+			set_footstep_sfx()
 		elif Input.is_action_pressed("ui_left") and not dashing:
 			friction = false
 			movement.x = max(movement.x - ACCELERATION, -MAX_SPEED - glob.speedboots)
 			$Playersheet.flip_h = true
+			set_footstep_sfx()
 		else:
 			friction = true
 		var direction = -1 if $Playersheet.is_flipped_h() else 1
@@ -153,3 +155,15 @@ func set_jump_particles():
 	particles.position = global_position + Vector2(0, 22)
 	get_tree().current_scene.add_child(particles)
 
+func set_footstep_sfx():
+	if $Footstep.time_left <= 0 and is_on_floor():
+		var sfx = load("res://Data/Sounds/SFX/Footsteps/SFXFootstep%d.wav" % [randi() % 4 + 1])
+		var footstep = SoundManager.play_sound(sfx)
+		footstep.volume_db = -5
+		footstep.pitch_scale = rand_range(0.9, 1.1)
+		$Footstep.start()
+
+
+func _on_Footstep_timeout():
+	if max(movement.x, -movement.x) > ACCELERATION*2:
+		set_footstep_sfx()
