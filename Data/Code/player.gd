@@ -150,5 +150,6 @@ func finish_attack():
 func set_jump_particles():
 	glob.storage['levels'].append('bibot')
 	var particles = jump_particles.instance()
-	particles.position = global_position + Vector2(0, 24)
+	particles.position = global_position + Vector2(0, 22)
 	get_tree().current_scene.add_child(particles)
+
