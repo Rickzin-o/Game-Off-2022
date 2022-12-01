@@ -54,7 +54,7 @@ position = Vector2( 160, 320 )
 
 [node name="Dream Gate2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1184, 256 )
-dreams = 4
+dreams = 3
 
 [node name="Dream Gate3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2016, 192 )

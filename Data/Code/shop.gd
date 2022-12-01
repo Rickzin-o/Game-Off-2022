@@ -53,6 +53,7 @@ func _input(event):
 			glob.storage['money'] -= item_info['price']
 			item_sold(item)
 			item_effect(item)
+			glob.save_game()
 			money.text = "Money: $%d" % [glob.storage['money']]
 
 

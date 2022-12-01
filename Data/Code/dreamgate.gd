@@ -10,19 +10,11 @@ var playerinside = false
 onready var twn = $Tween
 
 func _ready():
-	if special_item != "":
-		$Label.set_visible(false)
-		$Special.texture = special_icon
-		if special_item in glob.items:
-			can_open = true
-	
-	$Label.text = "%d/%d" % [glob.storage['dreams'], dreams]
-	if glob.storage['dreams'] >= dreams:
-		$Label.modulate = Color8(70, 230, 70)
-		can_open = true
+	check()
 
 func _on_Area2D_body_entered(body):
 	playerinside = true
+	check()
 	if can_open:
 		$Area2D.set_collision_mask_bit(0, false)
 		twn.interpolate_property(self, "position", position, position + Vector2(0, -112), 1, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
@@ -30,3 +22,16 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	playerinside = false
+
+
+func check():
+	if special_item != "":
+		$Label.set_visible(false)
+		$Special.texture = special_icon
+		if special_item in glob.items:
+			can_open = true
+	
+	$Label.text = "%d/%d" % [glob.storage['dreams'], dreams]
+	if glob.storage['dreams'] >= dreams and special_item == "":
+		$Label.modulate = Color8(70, 230, 70)
+		can_open = true

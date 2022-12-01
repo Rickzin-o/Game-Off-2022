@@ -62,8 +62,12 @@ position = Vector2( 608, -416 )
 position = Vector2( 6544, -256 )
 
 [node name="Sign" parent="Interaction" instance=ExtResource( 9 )]
-position = Vector2( 2176, 416 )
+position = Vector2( 2112, 416 )
 value = 3
+
+[node name="Sign2" parent="Interaction" instance=ExtResource( 9 )]
+position = Vector2( 3904, 416 )
+value = 5
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, 872 )

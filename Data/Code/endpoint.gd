@@ -18,6 +18,7 @@ func interact():
 	
 	if glob.dreams >= glob.totalDreams:
 		end_level()
+		glob.save_game()
 	else:
 		glob.talking = true
 		DialogueManager.show_example_dialogue_balloon("not_enough_dreams", dialogue)
@@ -25,9 +26,12 @@ func interact():
 func end_level():
 	glob.emit_signal("transition")
 	glob.emit_signal("end_level")
+	
 	glob.savemoney = glob.storage['money']
 	glob.storage['dreams'] += glob.dreams
+	
 	if glob.kills <= 0: glob.emit_signal("goal_reached", "Pacifist")
+	
 	yield(get_tree().create_timer(1), "timeout")
 	glob.playersave['save_pos'] = true
 	get_tree().change_scene_to(doorsroom)

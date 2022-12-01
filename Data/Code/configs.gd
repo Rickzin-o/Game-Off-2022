@@ -15,3 +15,12 @@ func _on_MusicVolume_value_changed(value):
 	$MusicVolume/Label.text = str(value)
 	SoundManager.set_sound_volume(value/10)
 	glob.configs['sfx'] = value
+	glob.save_game()
+
+
+func _on_Reset_pressed():
+	$"Sure?".visible = true
+
+func _on_Sure_pressed():
+	glob.reset_game()
+	get_tree().change_scene("res://Data/Scenes/menuprincipal.tscn")

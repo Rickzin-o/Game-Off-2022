@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Data/Code/configs.gd" type="Script" id=1]
 [ext_resource path="res://Data/Others/pstheme.tres" type="Theme" id=2]
+[ext_resource path="res://Data/Images/UI/PurpleHover.png" type="Texture" id=3]
+[ext_resource path="res://Data/Images/UI/PurplePressed.png" type="Texture" id=4]
+[ext_resource path="res://Data/Images/UI/PurpleNormal.png" type="Texture" id=5]
+[ext_resource path="res://Data/Images/UI/GreenNormal.png" type="Texture" id=6]
+[ext_resource path="res://Data/Images/UI/GreenHover.png" type="Texture" id=7]
+[ext_resource path="res://Data/Images/UI/GreenPressed.png" type="Texture" id=8]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -170,4 +176,47 @@ text = "L"
 align = 2
 valign = 1
 
+[node name="Reset" type="TextureButton" parent="."]
+margin_left = 192.0
+margin_top = 256.0
+margin_right = 384.0
+margin_bottom = 320.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Reset"]
+margin_right = 192.0
+margin_bottom = 64.0
+text = "Reset"
+align = 1
+valign = 1
+
+[node name="Sure\?" type="TextureButton" parent="."]
+visible = false
+margin_left = 240.0
+margin_top = 328.0
+margin_right = 336.0
+margin_bottom = 360.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Sure\?"]
+margin_right = 96.0
+margin_bottom = 32.0
+text = "Sure?"
+align = 1
+valign = 1
+
 [connection signal="value_changed" from="MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Sure?" to="." method="_on_Sure_pressed"]

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 19
+resource_version = 23
 syntax_version = 2
 raw_text = "~ sign1
 
@@ -20,13 +20,18 @@ raw_text = "~ sign1
  : [i]The design of this game seems really poor.[/i]
 
 ~ sign4
- : \"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\""
+ : \"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\"
+
+~ sign5
+ : \"Cloud stop\"
+ : [i]It looks like you have to wait.[/i]"
 errors = [  ]
 titles = {
 "sign1": "2",
 "sign2": "5",
 "sign3": "9",
-"sign4": "14"
+"sign4": "14",
+"sign5": "17"
 }
 lines = {
 "0": {
@@ -64,6 +69,29 @@ lines = {
 "replacements": [  ],
 "text": "\"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\"",
 "translation_key": "\"This is the [shake rate=20 level=10][color=red]Nightmare[/color][/shake] zone, be careful!\"",
+"type": "dialogue"
+},
+"16": {
+"next_id": "17",
+"text": "sign5",
+"type": "title"
+},
+"17": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "18",
+"replacements": [  ],
+"text": "\"Cloud stop\"",
+"translation_key": "\"Cloud stop\"",
+"type": "dialogue"
+},
+"18": {
+"character": "",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "[i]It looks like you have to wait.[/i]",
+"translation_key": "[i]It looks like you have to wait.[/i]",
 "type": "dialogue"
 },
 "2": {

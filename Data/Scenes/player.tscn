@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 0.5, 0.5, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 2, 2, 2, 0.39 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -163,7 +163,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.15 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ 2, 0.1, 100 ],
+"args": [ 3, 0.1, 100 ],
 "method": "screenshake"
 } ]
 }
@@ -283,7 +283,7 @@ nodes/Walk/position = Vector2( -426.667, -426.667 )
 nodes/WalkSpeed/node = SubResource( 19 )
 nodes/WalkSpeed/position = Vector2( -256, -426.667 )
 nodes/output/position = Vector2( 768, 85.3333 )
-node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction" ]
+node_connections = [ "output", 0, "Action", "Action", 0, "FloorState", "Action", 1, "Fight", "Action", 2, "Taunt", "Action", 3, "Death", "FloorState", 0, "GroundAction", "FloorState", 1, "AirAction", "WalkSpeed", 0, "Walk", "AirAction", 0, "Jumping", "AirAction", 1, "Falling", "GroundAction", 0, "Idle", "GroundAction", 1, "WalkSpeed" ]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 22
